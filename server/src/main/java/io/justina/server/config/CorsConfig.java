@@ -6,6 +6,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+import java.util.Arrays;
+
 @Configuration
 public class CorsConfig {
 
@@ -13,9 +15,15 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("*"); // Permite todos los orígenes, cámbialo según tu configuración.
-        config.addAllowedMethod("*"); // Permite todos los métodos HTTP (GET, POST, etc.)
-        config.addAllowedHeader("*"); // Permite todos los encabezados.
+
+        config.setAllowedOriginPatterns(Arrays.asList(
+                "https://hackathon-por-justina.web.app",
+                "http://localhost:5173"
+        ));
+        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedHeaders(Arrays.asList("*"));
+        config.setAllowCredentials(true); // Esto es importante si usás JWT en cookies o tokens
+
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }

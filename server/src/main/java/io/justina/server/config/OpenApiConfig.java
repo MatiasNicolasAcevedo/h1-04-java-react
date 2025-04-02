@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
                 contact = @Contact(
                         name = "Justina.io",
                         email = "h104.justina@gmail.com",
-                        url = "https://hackaton-no-country.vercel.app/"
+                        url = "https://hackathon-por-justina.web.app/"
                 ),
                 description = "Justina.io - Multiplicate x7",
                 title = "OpenApi specification - justina.io",
@@ -36,7 +36,7 @@ import org.springframework.context.annotation.Configuration;
                 ),
                 @Server(
                         description = "PROD ENV",
-                        url = "https://justina-n2nb.onrender.com"
+                        url = "https://h1-04-java-react-qrtk.onrender.com"
                 )
         },
         security = {
