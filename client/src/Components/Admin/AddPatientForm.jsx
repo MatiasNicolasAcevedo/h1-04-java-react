@@ -57,7 +57,7 @@ const AddPatientForm = ({ onClose }) => {
     
       console.log('Sending data:', JSON.stringify(patientData)); // Verifica los datos enviados
     
-      fetch("https://justina-n2nb.onrender.com/v1/api/patients/create", {
+      fetch("https://h1-04-java-react-qrtk.onrender.com/v1/api/patients/create", {
         method: "POST",
         headers: headers,
         body: JSON.stringify(patientData),

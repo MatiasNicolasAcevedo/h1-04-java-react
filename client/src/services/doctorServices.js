@@ -1,4 +1,4 @@
-const API = 'https://justina-n2nb.onrender.com/v1/api/';
+const API = 'https://h1-04-java-react-qrtk.onrender.com/v1/api/';
 
 export const fetchDoctors = async (token) => {
   const response = await fetch(`${API}doctors/getAllDoctors`, {
