@@ -2,7 +2,7 @@
  
   <!-- PROJECT LOGO -->
   <div align='center'>
-    <a href="https://hackaton-no-country.vercel.app/" target="_blank">
+    <a href="https://hackathon-por-justina.web.app/" target="_blank">
       <img src="https://github.com/user-attachments/assets/1ba644e2-22d3-4567-ad16-2e0e76603ef9" alt="Banner" width="403" height="302">
     </a>
   </div> 
@@ -83,7 +83,7 @@
 </div>
 <div align='center'>
   <b>💗 Pagina web Justina.io 🌍</b>
-    <a href="https://hackaton-no-country.vercel.app/">[ Link a Justina.io ]</a>
+    <a href="https://hackathon-por-justina.web.app/">[ Link a Justina.io ]</a>
 </div>
 
 <br>
@@ -161,7 +161,7 @@
       <div>
        <h4>Diseño UX/UI</h4>
         <a href="https://www.linkedin.com/in/lisandroarguello/" target="_blank" rel="author">
-          <img width="110" src="https://media.licdn.com/dms/image/D4D03AQHSc_bGxgB7Mg/profile-displayphoto-shrink_800_800/0/1708989057068?e=1727308800&v=beta&t=Qma-1GlogwbGkO22ZdonihmUGpKBNbk-IbmdOtiEUd0"/>
+          <img width="110" src="https://hackathon-por-justina.web.app/assets/lisandro-Rd1NsCq6.jpg"/>
         </a>
           <h4 style="margin-top: 1rem;">Lisandro <br>Argüello</h4>
         <div style='display: flex; flex-direction: column'>
@@ -221,7 +221,7 @@
     <td align='center'>
       <div>
        <h4>Backend</h4>
-        <a href="https://porfolio-matias-acevedo.web.app/" target="_blank" rel="author">
+        <a href="https://matias-acevedo.web.app/" target="_blank" rel="author">
           <img width="110" src="https://github.com/user-attachments/assets/6da9d81a-4814-499b-b5bf-a31ab7fde797"/>
         </a>
           <h4 style="margin-top: 1rem;">Matias <br>Acevedo</h4>
@@ -250,8 +250,8 @@
 </div>
 
 <div align='center'>
-   <img src="https://github.com/user-attachments/assets/a4adc243-979f-40c1-956d-da55642ff0c1" alt="mini" >
-   <img src="https://github.com/user-attachments/assets/39681bab-6782-4bbb-9ede-fc50a72f643a" alt="mini" >
+   <img src="https://hackathon-por-justina.web.app/assets/device1-Bg3cbh21.png" alt="mini" >
+   <img src="https://hackathon-por-justina.web.app/assets/device2-CDj7m5wQ.png" alt="mini" >
 </div>
 
 <br>
@@ -314,7 +314,7 @@
 </div>
 <div align='center'>
   <b>🔸 Documentación de los endpoints en Swagger UI 🧾:</b>
-    <a href="https://justina-n2nb.onrender.com/swagger-ui/index.html#/" target="_blank">[ Link a Swagger UI ]</a>
+    <a href="https://h1-04-java-react-qrtk.onrender.com/swagger-ui/index.html#/" target="_blank">[ Link a Swagger UI ]</a>
 </div>
 
 <br>
