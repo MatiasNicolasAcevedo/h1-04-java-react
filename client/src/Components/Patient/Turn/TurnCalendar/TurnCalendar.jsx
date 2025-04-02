@@ -1,10 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAppointmentById } from "../../../../services/appointmentService";
+import { translateDay } from "../../../../utils/hourMapping";
 import Calendar from "../../../../helpers/atoms/Calendar";
 import Turns from "../Turns";
 import DoctorContext from "../../../../context/DoctorContext";
-import { translateDay } from "../../../../utils/hourMapping";
+import Spinner from "../../../../helpers/atoms/Spinner";
+import PatientHeader from "../../PatientHeader/PatientHeader";
+
 export default function TurnCalendar() {
   const [appointments, setAppointments] = useState([]);
   const [error, setError] = useState(null);
@@ -40,7 +43,7 @@ export default function TurnCalendar() {
     console.log(appointments);
   }, [appointments]);
 
-  if (loading || authLoading) return <p>Loading...</p>;
+  if (loading || authLoading) return <Spinner/>;
   if (error) return <p>Error: {error}</p>;
 
   // Group appointments by day
@@ -55,17 +58,17 @@ export default function TurnCalendar() {
 
   return (
     <div className='mt-0 flex flex-col'>
-      <Calendar />
-      <button className='rounded-full mb-3 w-full flex justify-center items-center pb-1 bg-primary border-2 text-xl font-bold text-white'>
-        <Link to={"/new-turn"}>Nuevo turno</Link>
-      </button>
-      {Object.keys(groupedAppointments).length > 0 ? (
+      <PatientHeader text="Turnos" color="#5A5555"  />
+      
+      <Calendar bgColor="#8163B033" />
+      
+      { Object.keys(groupedAppointments).length > 0 ? (
         Object.keys(groupedAppointments).map((day) => (
           <div key={day} className='mb-6'>
-            <h3 className='text-lg font-extrabold ml-4 text-orangeColor  mb-2'>
+            <h3 className='text-lg ml-4 text-blackClear mb-2'>
               {translateDay(day)}...
             </h3>
-            {groupedAppointments[day].map((appointment) => (
+            { groupedAppointments[day].map((appointment) => (
               <Turns
                 key={appointment.appointmentId}
                 doctor={appointment.fullnameDoctor}
@@ -73,12 +76,16 @@ export default function TurnCalendar() {
                 href={"/view-turn"}
                 type={appointment.typeOfAppointment}
               />
-            ))}
+            )) }
           </div>
         ))
       ) : (
         <p>No appointments found</p>
-      )}
+      ) }
+      
+      <button className='rounded-xl mb-5 mt-5 flex w-[90%] justify-center items-center p-4 border-1 font-bold text-white m-auto' style={{backgroundColor:"#8163B0"}}>
+        <Link to="/new-turn">Agendar Turno</Link>
+      </button>
     </div>
   );
 }

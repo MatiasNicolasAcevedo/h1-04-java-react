@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import img from "../../Assets/Imgs/profileDoctor.png";
+import { getImageById } from "../../Assets/images";
 import {
   formatHour,
   translateDay,
@@ -8,23 +8,31 @@ import {
 
 export default function CardPatient(props) {
   const navigate = useNavigate();
+  const image = getImageById(props.id); // Obtén la imagen basada en el ID del paciente
 
   const handleClick = () => {
-    navigate("/previous-consultation", { state: { patient: props } });
+    navigate("/previous-consultation", {
+      state: {
+        patient: {
+          ...props,
+          image, // Asegúrate de pasar la imagen
+        },
+      },
+    });
   };
 
   return (
     <div
       onClick={handleClick}
-      className='flex gap-2  items-center w-full cursor-pointer'
+      className='flex gap-2 items-center w-full cursor-pointer'
     >
       <div className='text-blue-400 w-1/5 border-l-2 border-blue-500 pl-5'>
         {formatHour(props.time)}
       </div>
       <div className='flex bg-white w-full shadow-md items-center space-x-4 p-3 rounded mb-2'>
-        {/* <div className='bg-purple-300 text-white rounded-full w-10 h-10 flex items-center justify-center'>
-          <img src={img} alt='' />
-        </div> */}
+        <div className='bg-purple-300 text-white rounded-full w-10 h-10 flex items-center justify-center'>
+          <img src={image} alt='Patient' />
+        </div>
         <div>
           <div className='text-blue-600'>{props.name}</div>
           <div className='flex text-gray-500'>

@@ -3,6 +3,7 @@ import DoctorContext from "../../../context/DoctorContext";
 import { getAppointmentByDoctor } from "../../../services/appointmentService";
 import DoctorHeader from "../DoctorHeader/DoctorHeader";
 import CardPatientList from "./CardPatientList";
+import Spinner from "../../../helpers/atoms/Spinner";
 
 const PatientLists = () => {
   const [appointments, setAppointments] = useState([]);
@@ -79,24 +80,25 @@ const PatientLists = () => {
     filterAppointments();
   }, [search, appointments]);
 
-  if (loading || authLoading) return <p>Loading...</p>;
+  if (loading || authLoading) return <Spinner />;
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className='m-5 flex flex-col'>
+    <div className='flex flex-col'>
       <DoctorHeader text={"Pacientes"} />
       <input
         type='text'
         placeholder='Buscar paciente...'
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className=' p-2 border rounded shadow-lg py-3'
+        className=' p-2 border rounded-[10px] shadow-lg py-3'
       />
       <div className='mt-4'>
         {filteredAppointments.length > 0 ? (
           filteredAppointments.map((appointment) => (
             <CardPatientList
               key={appointment.appointmentId}
+              id={appointment.patientId}
               time={`A`}
               name={appointment.fullnamePatient}
               description={appointment.typeOfAppointment}

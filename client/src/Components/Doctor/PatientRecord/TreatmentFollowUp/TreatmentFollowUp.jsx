@@ -14,8 +14,7 @@ const TreatmentFollowUp = () => {
         <p>(se esta haciendo esta función)</p>
         <h2>Editar?</h2>
         <textarea name='edit' id='edit'></textarea>
-        <button
-          onClick={() => setIsPopUpVisible(false)}
+        <button onClick={() => setIsPopUpVisible(false)}
           className='buttonContinue'
         >
           Listo
@@ -26,7 +25,7 @@ const TreatmentFollowUp = () => {
 
   return (
     <>
-      <section className='m-5'>
+      <section className=''>
         <DoctorHeader text={"Tratamiento"} />
         <h3 className='mb-5'>Adherencia general al tratamiento </h3>
 
@@ -44,7 +43,7 @@ const TreatmentFollowUp = () => {
           >
             Editar
           </button>
-          <div className='flex justify-center mb-4'>
+          <div className='flex justify-center mb-4 relative'>
             <GaugeMeter value={4.3} />
           </div>
           <div className='flex justify-center items-center'>

@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import profileDoctor from "../../../Assets/Imgs/profileDoctor.png";
 import DoctorHeader from "../DoctorHeader/DoctorHeader";
 import "./previousConsultation.css";
@@ -8,10 +7,11 @@ import {
   formatHour,
   translateDay,
   translateAppointmentType,
-  translateSpecialty,
 } from "../../../utils/hourMapping";
 import SuccesModal from "../../Modals/SucessModal";
 import DoctorContext from "../../../context/DoctorContext";
+import { useContext, useEffect, useState } from "react";
+
 const PreviousConsultation = () => {
   const [activeTab, setActiveTab] = useState("Motivo de la cita");
   const location = useLocation();
@@ -23,8 +23,6 @@ const PreviousConsultation = () => {
   const [patientData, setPatientData] = useState([]);
   const [error, setError] = useState(null);
   const [dataAppointments, setDataAppointments] = useState([]);
-
-  // console.log(patient);
 
   useEffect(() => {
     const handleGetAppointment = async () => {
@@ -39,13 +37,13 @@ const PreviousConsultation = () => {
         throw new Error("Failed to fetch appointments");
       }
     };
-    // console.log(dataAppointments);
 
     handleGetAppointment();
   }, [authData]);
+
   useEffect(() => {
     const loadPatientData = async () => {
-      if (authData) {
+      if (authData && patient) {
         try {
           const data = await fetchPatientById(patient.id);
           setPatientData(data.patient.treatments);
@@ -60,94 +58,84 @@ const PreviousConsultation = () => {
     };
 
     loadPatientData();
-  }, []);
+  }, [authData, patient]);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/consultation", { state: { patient: patient } });
+  };
 
   return (
-    <div className='previous-consultation'>
-      <DoctorHeader text={"Pre-Consulta"} />
+    <div className='previous-consultation flex flex-col justify-between h-full'>
+      <div>
+        <DoctorHeader text={"Pre-Consulta"} />
 
-      <section className='boxCotent bg-white'>
-        <div className='header'>
+        <section className='boxCotent bg-white'>
+          <div className='header'>
+            <div>
+              <img
+                src={patient?.image || profileDoctor} // Usa la imagen pasada desde CardPatient
+                alt={patient?.fullnamePatient || "Doctor"}
+              />
+            </div>
+            <div className='detailsHeader'>
+              <h2>{patient?.name || "Nombre del Doctor"}</h2>
+              <p className='text-[#5A5555]'>
+                {translateAppointmentType(patient?.description) ||
+                  "Descripción de la consulta"}
+              </p>
+            </div>
+          </div>
           <div>
-            <img
-              src={profileDoctor}
-              alt={patient?.fullnamePatient || "Doctor"}
-            />
+            <div className='appointment-info'>
+              <p>{translateDay(patient?.date) || "Fecha de la consulta"}</p>
+              <p>{formatHour(patient?.time) || "Hora de la consulta"}</p>
+            </div>
+            <div className='flex justify-between '>
+              <button
+                className='text-blueColor font-bold'
+                onClick={() => setShowVerificando(true)}
+              >
+                Reagendar
+              </button>
+            </div>
           </div>
-          <div className='detailsHeader'>
-            <h2>{patient?.name || "Nombre del Doctor"}</h2>
-            <p>
-              {translateAppointmentType(patient?.description) ||
-                "Descripción de la consulta"}
-            </p>
-          </div>
-        </div>
-        <div>
-          <div className='appointment-info'>
-            <p>{translateDay(patient?.date) || "Fecha de la consulta"}</p>
-            <p>{formatHour(patient?.time) || "Hora de la consulta"}</p>
-          </div>
-          <div className='buttons'>
-            <button>Reagendar</button>
-            <button>Cancelar</button>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className='boxCotent bg-white'>
-        <div className='tabs'>
-          <button
-            className={activeTab === "Motivo de la cita" ? "active" : ""}
-            onClick={() => setActiveTab("Motivo de la cita")}
-          >
-            Motivo de la cita
-          </button>
-          <button
-            className={activeTab === "Tratamiento" ? "active" : ""}
-            onClick={() => setActiveTab("Tratamiento")}
-          >
-            Tratamiento
-          </button>
-        </div>
-        <div className='content'>
-          {activeTab === "Motivo de la cita" ? (
+        <section className='boxCotent min-h-40  bg-white'>
+          <div className=''>
+            <h4 className={"font-bold mb-2"}>Motivo de la cita</h4>
+          </div>
+
+          <div className=''>
             <>
-              <h3>Motivos</h3>
               {patientData.map((treatment, index) => (
-                <p key={index}>{treatment.treatmentName}</p>
+                <p key={index}>{treatment.indications}.</p>
               ))}
-              <br />
-              <h3>Tratamiento</h3>
               {patientData.map((treatment, index) => (
-                <p key={index}>{treatment.indications}</p>
+                <p key={index}>{treatment.treatmentName}.</p>
               ))}
             </>
-          ) : (
-            <>
-              <h3>Medicacion</h3>
-              {patientData.map((treatment, index) => (
-                <div key={index}>
-                  {treatment.medicalPrescriptions.map((prescription, index) => (
-                    <div key={index} className='border-t-2'>
-                      <p>{prescription.medication.medicationName}</p>
-                      <p>{prescription.indications}</p>
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </>
-          )}
-        </div>
-        <div className='footer-buttons'>
-          <button onClick={() => setShowVerificando(true)}>
+          </div>
+        </section>
+      </div>
+      <div>
+        <div className='footer-buttons  '>
+          <Link
+            to='/medicalHistory'
+            state={{ patient }}
+            className='A text-center'
+          >
             Historia clínica
-          </button>
-          <button onClick={() => setShowVerificando(true)}>Medicamentos</button>
+          </Link>
         </div>
-        <Link to={"/consultation"}>
-          <button className='start-consultation'>Iniciar consulta</button>
-        </Link>
-      </section>
+
+        <button onClick={handleClick} className='start-consultation'>
+          Iniciar consulta
+        </button>
+      </div>
+
       <SuccesModal
         show={showVerificando}
         onClose={() => setShowVerificando(false)}

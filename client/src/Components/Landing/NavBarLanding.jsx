@@ -1,5 +1,5 @@
-import { FaDownload } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import download from '../../Assets/Imgs/downloadLanding.png';
 import hearth from '../../Assets/Imgs/hearthNavbar.png';
 
 const NavBarLanding = () => {
@@ -71,7 +71,7 @@ const NavBarLanding = () => {
             <div className="text-white text-xs sm:text-sm md:text-base font-semibold">
               DESCARGAR
             </div>
-            <FaDownload className="text-white" />
+            <img src={download} alt="download-icon" />
           </div>
         </div>
       </div>

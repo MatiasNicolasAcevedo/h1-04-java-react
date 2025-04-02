@@ -1,0 +1,83 @@
+.rsc-header {
+    margin: 0px !important;
+    height: 50px !important;
+    padding-top: 15px !important;
+}
+
+.rsc-bot-avatar {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 2px solid #fceade !important;
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+}
+
+.rsc-message {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    color: #333 !important;
+}
+
+.ChatBotButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fceade;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-image: url('../../Assets/Imgs/doctor.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.ChatBotContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80%;
+    max-width: 350px;
+    height: 500px;
+    background-color: #232233;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 1000;
+    display: none;
+}
+
+.ChatBotContainer.show {
+    display: block;
+}
+
+.ChatBot .rsc-chatbot {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.linkVerMasInfo{
+    font-weight: 700;
+    border-bottom: 1px solid #009FF5;
+    transition: all .3s;
+
+}
+.linkVerMasInfo:hover{
+    color: #009FF5;
+    transition: all .3s;
+}
+
+
+
+@media (max-width: 768px) {
+    .rsc-bot-avatar {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .rsc-message {
+        font-size: 14px !important;
+    }
+}

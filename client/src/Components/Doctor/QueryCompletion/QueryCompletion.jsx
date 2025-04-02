@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DoctorContext from "../../../context/DoctorContext";
 import profileDoctor from "../../../Assets/Imgs/profileDoctor.png";
 import DoctorHeader from "../DoctorHeader/DoctorHeader";
@@ -25,38 +25,41 @@ const QueryCompletion = () => {
   };
 
   return (
-    <div className='m-5 query-completion'>
-      <DoctorHeader text={"Recomendaciones y recetas"} />
+    <div className=' query-completion flex flex-col justify-between h-full'>
+      <div>
+        <DoctorHeader text={"Recomendaciones y recetas"} />
 
-      <section className='header'>
-        <div>
-          <img src={profileDoctor} alt='Laura Gomez' />
-        </div>
-        <div className='detailsHeader'>
-          <h2>Laura Gomez</h2>
-          <p>Consulta por control</p>
-        </div>
-      </section>
+        <section className='header'>
+          <div>
+            <img src={profileDoctor} alt='Laura Gomez' />
+          </div>
+          <div className='detailsHeader'>
+            <h2>Laura Gomez</h2>
+            <p>Consulta por control</p>
+          </div>
+        </section>
 
-      <section className='mt-10'>
-        <p>Resumen de la consulta</p>
-        <div className='queryNotes bg-white'>
-          <h2>Notas...</h2>
-          <p>{notes}</p>
-        </div>
-      </section>
+        <section className='mt-10'>
+          <p>Resumen de la consulta</p>
+          <div className='queryNotes bg-white min-h-36'>
+            <h2>Notas...</h2>
+            <p>{notes}</p>
+          </div>
+        </section>
+      </div>
+      <div>
+        <section className='footer-query-buttons'>
+          <Link to='/doctorCalendar' className='B'>
+            <img src={agendarTurno} alt='AgendarTurno' />
+            Agendar turno
+          </Link>
+          <Link to='/doctorRecipe' className='A'>
+            <img src={agregarReceta} alt='agregarReceta' />
+            Agregar receta
+          </Link>
+        </section>
 
-      <section className='footer-query-buttons'>
-        <a href='/doctorCalendar'>
-          <img src={agendarTurno} alt='AgendarTurno' />
-          Agendar turno
-        </a>
-        <a href='/doctorRecipe'>
-          <img src={agregarReceta} alt='agregarReceta' />
-          Agregar receta
-        </a>
-      </section>
-
+        {/* 
       <section className='writeTextQuery'>
         <p>Indicaciones</p>
         <textarea
@@ -66,12 +69,11 @@ const QueryCompletion = () => {
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
         ></textarea>
-      </section>
-
-      <button className='start-consultation' onClick={handlePopUp}>
-        Enviar
-      </button>
-
+      </section> */}
+        <button className='start-consultation' onClick={handlePopUp}>
+          Enviar
+        </button>
+      </div>
       <SuccesModal
         title={"Listo!"}
         text={"Se agendo la proxima cita y se envio la receta exitosamente"}
