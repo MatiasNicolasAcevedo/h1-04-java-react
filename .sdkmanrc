@@ -1,0 +1,3 @@
+# SDKMAN: run `sdk env install` in the repo root. If this exact build is not offered,
+# pick the newest 21.x Temurin from `sdk list java`.
+java=21.0.12-tem
