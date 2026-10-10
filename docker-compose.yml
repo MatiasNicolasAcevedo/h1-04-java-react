@@ -1,0 +1,22 @@
+# Local development services only (the app itself runs with ./scripts/dev.sh).
+# Credentials match server/.env.example and are for local use only.
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: justina-db
+    environment:
+      POSTGRES_DB: justina
+      POSTGRES_USER: justina
+      POSTGRES_PASSWORD: justina
+    ports:
+      - "5432:5432"
+    volumes:
+      - justina-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U justina -d justina"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  justina-db-data:

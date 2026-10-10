@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./scripts/verify.sh)",
+      "Bash(./scripts/verify.sh server)",
+      "Bash(./scripts/verify.sh client)",
+      "Bash(./mvnw test:*)",
+      "Bash(./mvnw -q test:*)",
+      "Bash(./mvnw -B -q verify)",
+      "Bash(npm ci:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run build)",
+      "Bash(npm test:*)",
+      "Bash(npx vitest run:*)",
+      "Bash(docker compose up -d --wait db)",
+      "Bash(docker compose ps:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "Bash(git ls-remote:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr checks:*)"
+    ],
+    "deny": [
+      "Read(./server/.env)",
+      "Read(./client/.env)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(docker compose down -v:*)"
+    ]
+  }
+}
