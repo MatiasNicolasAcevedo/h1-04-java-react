@@ -48,12 +48,24 @@ y usar el mismo `server/.env`. Con MySQL 8 también funciona cambiando `DB_URL` 
 - Logs: `application.properties` ya tiene DEBUG para web, Jackson y Security (mucho ruido). Logs de `dev.sh` en `.dev-logs/`.
 - Front: React DevTools; la sesión está en `localStorage["authData"]`.
 
-## Agente ligero (Qwen Code u otros)
-- **Qwen Code:** `.qwen/settings.json` define `context.fileName: ["AGENTS.md"]` (clave verificada en `@qwen-code/qwen-code` 0.25.0), así lee `AGENTS.md` como archivo de contexto. Arrancá con `qwen` desde la raíz y escribí `Seguí docs/agents/implementer.md`. Compactar: `/compress`.
-- **opencode / Cline / Codex:** leen `AGENTS.md` de forma nativa. **Aider:** `aider --read AGENTS.md`.
+## Agentes
+Ejecutores y traspasos: `AGENTS.md` §1. Matriz de revisión: `CONTRIBUTING.md` §4.
+
+### 🤖 Agente gratuito (IntelliJ IDEA, modelo Qwen)
+- **Archivo de contexto:** ⚠️ no verificado directamente (las páginas de JetBrains están bloqueadas por el proxy del entorno donde se escribió esto; dato tomado de resultados de búsqueda de la ayuda oficial, 2026-10). El **chat de AI Assistant** aplica *project rules* de `.aiassistant/rules/*.md`; los **agentes** (Junie y los agentes ACP) leen `AGENTS.md` (Junie: *Guidelines path* configurable, por defecto `.junie/guidelines.md`). Por eso:
+  - `.aiassistant/rules/agents.md` es un puntero de una línea a `AGENTS.md`. Confirmá en *Settings → Tools → AI Assistant → Rules* que figure con tipo **Always**.
+  - Si usás Junie: *Settings → Tools → Junie → Guidelines path* = `AGENTS.md`.
+  - En todos los casos, la **frase de arranque** cubre la duda: «Leé `AGENTS.md` y seguí `docs/agents/implementer.md`».
+- **Chat nuevo** (una tarea = un chat; también es la forma de "compactar"): en la ventana de AI Chat, botón **+ / New Chat**. No reutilices un chat de otra tarea.
+- **Modo:** elegí el modo **agente** (el que edita archivos y corre comandos), no el de solo chat. Los nombres exactos del selector cambian entre versiones.
+- **Terminal:** el agente pide permiso para cada comando; aprobá los de `AGENTS.md` §3 y los `git` de lectura. No le des aprobación automática para todo (*brave mode* o similar): nunca debe correr `git push` a `main`, `--force` ni `docker compose down -v`.
 - **Contexto efectivo supuesto:** ~64K tokens. Las tareas 🤖 están dimensionadas para usar < 40 %.
-- **GitHub:** preferido `gh` CLI autenticado (`gh auth login`); alternativa: MCP de GitHub; mínimo: `git push` + abrir el PR desde la web. Con una sola cuenta no se puede aprobar el propio PR: la revisión se publica como comentario con veredicto (ver `CONTRIBUTING.md`). Opcional: una cuenta bot o GitHub App solo para revisar.
-- **Claude Code:** `.claude/settings.json` permite sin preguntar los comandos seguros (verify, tests, lint, git de lectura, `gh pr view/list/diff`).
+- **Git y PR:** no tiene `gh` ni MCP de GitHub; usa `git` en la terminal del IDE con tus credenciales (las del IDE o el *credential helper*). Empuja su rama con `git push -u origin <rama>` y te deja el **link de comparación** `https://github.com/MatiasNicolasAcevedo/h1-04-java-react/compare/main...<rama>?expand=1` con título y cuerpo listos: **vos abrís el PR** (en draft) y pegás sus comentarios de revisión. Para ver ramas usa `git ls-remote --heads origin`; para leer un diff, `git diff main...origin/<rama>`.
+
+### 🧠 Modelo de frontera (Claude Code)
+- Lee `CLAUDE.md` → `@AGENTS.md`. `.claude/settings.json` permite sin preguntar los comandos seguros (verify, tests, lint, `git status/diff/log/show`, `gh pr view/list/diff/checks`) y niega push forzado, push a `main` y leer `.env`.
+- **GitHub:** `gh` CLI autenticado (`gh auth login`) o MCP de GitHub. Con una sola cuenta no se puede aprobar el propio PR: la revisión es un comentario con veredicto. Opcional: cuenta bot o GitHub App solo para revisar.
+- Compactar: `/compact` con la instrucción de `AGENTS.md` §5.
 
 ## Problemas del entorno
 Ver la tabla del [README](../README.md#problemas-frecuentes). Además:
