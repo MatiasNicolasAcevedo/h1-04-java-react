@@ -2,7 +2,7 @@
 _Actualizado: 2026-10-10 · por: agente de frontera · sesión: auditoría (bootstrap T-000)_
 
 ## En una línea
-Bootstrap en curso: PC1 (descubrimiento y verificación) alcanzado.
+Bootstrap en curso: PC2 (auditoría completa) alcanzado.
 
 ## Salud
 | Check | Estado | Nota |
@@ -17,4 +17,4 @@ Bootstrap en curso: PC1 (descubrimiento y verificación) alcanzado.
 
 ## Foco
 - PR abierto: T-000 bootstrap (draft).
-- **Próximo paso exacto:** Fase 2 del bootstrap (relevamiento por dimensiones → §4 de la auditoría).
+- **Próximo paso exacto:** Fase 3 del bootstrap (harness, testing, git, README, docs).
