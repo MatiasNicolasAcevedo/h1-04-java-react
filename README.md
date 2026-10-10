@@ -1,343 +1,243 @@
-<h1 align="center">💓 Equipo h1-04-java-react | No Country 🌎</h1>
- 
-  <!-- PROJECT LOGO -->
-  <div align='center'>
-    <a href="https://hackathon-por-justina.web.app/" target="_blank">
-      <img src="https://github.com/user-attachments/assets/1ba644e2-22d3-4567-ad16-2e0e76603ef9" alt="Banner" width="403" height="302">
-    </a>
-  </div> 
+<h1 align="center">💓 Justina.io</h1>
 
-<br>
-<h1 align='center'>📑 Descripción del Proyecto: Justina.io 🌈</h1>
+<p align="center">Plataforma web para la gestión médica de pacientes trasplantados y la coordinación entre pacientes, doctores e instituciones.<br>MVP creado por el equipo <b>h1-04-java-react</b> en la hackatón de <a href="https://www.nocountry.tech/">No Country</a>.</p>
 
-<div align="center">
-  <p>
-   Justina.io nace con la misión de ayudar a la mayor cantidad de personas posible. Con 7 funcionalidades clave, esta plataforma transforma y agiliza el proceso de donación y atención médica.
-  </p>
-</div>
-
-<br>
-
-<h2 align="center">¿Qué es Justina.io? 💡</h2>
-
-<div align="center">
-  <p>Justina.io es un sistema integral y altamente seguro que facilita la gestión y coordinación en torno a la donación de órganos y la atención médica. Nuestro MVP🏆 está orientado a brindar una solución efectiva para conectar a pacientes, doctores, laboratorios, financiadores, instituciones y usuarios, de manera que podamos facilitar el proceso de donación y tratamiento médico integral. 💉🔬
-  </p>
-</div>
-
-<br>
-
-<div align='center'>
-  <h2>❤ 7 características clave de Justina.io ✨</h2>
-</div>
-
-<div align='center'>
-    <p>
-      🔸 1- Seguridad y Protección de Datos: 🔒 <br>
-      Un robusto sistema de autenticación basado en tokens y encriptación de datos para garantizar la máxima seguridad y privacidad de la información de los usuarios.
-      </p>
- <p>
-      🔸 2- Gestión de Usuarios y Roles: 👥 <br> Control total sobre la obtención, actualización y eliminación de usuarios, así como la gestión de documentos e imágenes asociadas. Además, contamos con un sistema de roles para identificar el tipo de usuario que inicia sesión, ya sea administrador, médico o paciente.
-      </p>
- <p>
-      🔸 3- Gestión de Doctores y Pacientes: 🩺 <br> 
-      Facilita la creación, obtención y actualización de información de doctores y pacientes, incluyendo la capacidad de subir archivos, mantener un historial médico detallado, y descargar la historia clínica para tenerla disponible en todo momento.
-    </p>
- <p>
-      🔸 4- Tratamientos y Prescripciones Médicas: 💊 <br> Manejo integral de la creación y asociación de tratamientos con pacientes, así como la gestión de prescripciones médicas.
+<p align="center">
+  <img alt="Java 17+" src="https://img.shields.io/badge/Java-17%2B-007396?logo=openjdk&logoColor=white">
+  <img alt="Spring Boot 3.3" src="https://img.shields.io/badge/Spring%20Boot-3.3-6DB33F?logo=springboot&logoColor=white">
+  <img alt="React 18" src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black">
+  <img alt="Vite 5" src="https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white">
+  <img alt="PostgreSQL 16" src="https://img.shields.io/badge/PostgreSQL-16-4169E1?logo=postgresql&logoColor=white">
 </p>
- <p>
-      🔸 5- Medicamentos y Laboratorios: 🏥 <br> Administración eficiente de medicamentos y laboratorios, incluyendo su creación, actualización y desactivación.
-      </p>
- <p>
-      🔸 6- Financiadores e Instituciones: 💵 <br> Gestión de financiadores e instituciones relacionadas con el sistema, asegurando una coordinación efectiva.
-      </p>
- <p>
-      🔸 7- Citas Médicas: 📅 <br> Facilita la creación, actualización y gestión de citas médicas, con la capacidad de recuperar citas específicas por doctor o paciente.
-      </p>
-  <p>
-      🔹 Extra- SpeechRecognition: 🗣 <br> La interfaz SpeechRecognition de la Web Speech API controla el servicio de reconocimiento de voz, permitiendo iniciar, detener y manejar eventos relacionados con el reconocimiento de voz. <br>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition#browser_compatibility">[ Browser compatibility ]</a>        
-      </p>
-</div>
 
-<br>
+<p align="center">
+  <a href="https://youtu.be/RtNjyRXNGm8"><img src="https://github.com/user-attachments/assets/95a4cb0c-9a31-4bda-a6d5-7e48764cdcaf" alt="Video de demostración de Justina.io" width="640"></a>
+</p>
 
-<hr>
+## Qué problema resuelve
 
-<div align="center">
-  <p>Con Justina.io, nuestro objetivo no es solo ayudar y contribuir a la donación de órganos de manera eficiente, sino también proporcionar una plataforma que garantice la seguridad y el bienestar de todos los involucrados. Estamos comprometidos en ofrecer una solución que no solo facilite el proceso, sino que también tenga un impacto significativo en la vida de las personas. 🌟
-  </p>
-</div>
+Justina.io (por la [Ley Justina](https://www.argentina.gob.ar/sites/default/files/ley-27447.pdf) de donación de órganos) busca agilizar el seguimiento de pacientes trasplantados: turnos, tratamientos, recetas e historia clínica en un solo lugar, con una vista para cada rol.
 
-<div align="center">
-  <p>¡Únete a nosotros en esta noble causa y sé parte del cambio, MULTIPLICATE X7! 💪❤️
-  </p>
-</div>
+**Funcionalidades** (✅ funciona con el back · 🚧 en progreso o con datos de ejemplo):
 
-<hr>
+- ✅ Autenticación con JWT y redirección por rol (administrador, doctor, paciente).
+- ✅ API de usuarios, doctores, pacientes, turnos, tratamientos, recetas, medicamentos, laboratorios, financiadores e instituciones ([Swagger](#levantar-el-proyecto-en-local) en local).
+- 🚧 Agenda de turnos: la API existe, pero no hay turnos de ejemplo y la agenda del admin usa datos fijos.
+- 🚧 Planes de tratamiento del paciente, trasplante cruzado y descarga de historia clínica: pantallas con datos de ejemplo.
+- 🚧 Subida de archivos (Cloudinary) y emails (Gmail SMTP): requieren credenciales propias.
+- 🧪 Dictado por voz en la consulta médica ([Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition#browser_compatibility)).
 
-<br>
-<div align='center'>
-  <h2>🌐 Deploy Frontend 🌟</h2>
-</div>
-<div align='center'>
-  <b>💗 Pagina web Justina.io 🌍</b>
-    <a href="https://hackathon-por-justina.web.app/">[ Link a Justina.io ]</a>
-</div>
+Estado detallado y próximos pasos: [docs/STATUS.md](docs/STATUS.md) · [docs/ROADMAP.md](docs/ROADMAP.md).
 
-<br>
-<div align='center'>
-  <h2>🎨 Diseño 🎨</h2>
-</div>
+## Stack
 
-<div align='center'>
-  <b>🌈 Diseño en Figma 🖌️</b>
-    <a href="https://www.figma.com/design/JqCxyf2Hfotlruh2glaqN6/Hackaton-Justina?node-id=25-19&t=abhMHMih64wc2uEW-1" target="_blank">[ Link al Diseño Figma ]</a>
-</div>
+| Parte | Tecnologías |
+|---|---|
+| Back (`server/`) | Java 17 (corre con 17+; probado con 21), Spring Boot 3.3.1, Spring Security + JWT (jjwt 0.11), Spring Data JPA/Hibernate, PostgreSQL 16, springdoc-openapi 2.2, Lombok, Maven 3.9 (wrapper) |
+| Front (`client/`) | React 18.3, Vite 5.3, React Router 6, Tailwind CSS 3.4, Formik, JavaScript |
+| Infra | Docker Compose (base de datos local), Render (back), Firebase Hosting (front) |
 
-<br>
-<br>
+Arquitectura, modelo de datos y endpoints: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
- <div align='center'>
-  <h2> 🎬 Video Demostración ▶ </h2>
-</div>
+## Levantar el proyecto en local
 
+### Prerrequisitos
 
- <div align='center'>
-  <a href="https://youtu.be/RtNjyRXNGm8" target="_blank" rel="noopener">
-    <img src="https://github.com/user-attachments/assets/95a4cb0c-9a31-4bda-a6d5-7e48764cdcaf" alt="mini" width="670" height="325" >
-  </a>
-</div>
+| Herramienta | Versión | Cómo comprobarla | Cómo instalarla |
+|---|---|---|---|
+| Git | cualquiera | `git --version` | https://git-scm.com/downloads |
+| Java (JDK) | 21 (mínimo 17) | `java -version` | [SDKMAN](https://sdkman.io/): `sdk env install` en la raíz del repo (usa `.sdkmanrc`), o [Temurin](https://adoptium.net/) |
+| Node.js | 22 (con npm 10) | `node -v` | [nvm](https://github.com/nvm-sh/nvm): `nvm install` en la raíz del repo (usa `.nvmrc`) |
+| Docker + Compose v2 | Docker 24+ | `docker compose version` | [Docker Desktop](https://www.docker.com/products/docker-desktop/) o Docker Engine |
+| curl | cualquiera | `curl --version` | viene con macOS, Linux y Windows 10+ |
 
+No hace falta instalar Maven ni PostgreSQL: se usan el wrapper `./mvnw` y un contenedor.
 
-<br>
-<h2 align='center'>✨ Equipo ✨</h2>
-<table align='center'>
-  <tr>
-    <td align='center'>
-      <div>
-       <h4>Team Leader</h4>
-        <a href="https://www.linkedin.com/in/diego-gonzalez-7937aa16/" target="_blank" rel="author">
-          <img width="110" src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/f55014d5-6116-400d-81ce-f20c5a9c67d0"/>
-        </a>
-          <h4 style="margin-top: 1rem;">Diego <br>Gonzalez</h4>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://www.linkedin.com/in/diego-gonzalez-7937aa16/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-       <h4>QA Tester</h4>
-        <a href="https://www.linkedin.com/in/yosmarli-parica-1156461a2/" target="_blank" rel="author">
-            <img width="110" src="https://github.com/user-attachments/assets/42e3bfde-2125-474c-ac99-17936c3ddfe6"/>
-        </a>
-            <h4 style="margin-top: 1rem;">Yosmarli <br>Parica</h4>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://www.linkedin.com/in/yosmarli-parica-1156461a2/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-       <h4>Diseño UX/UI</h4>
-        <a href="https://www.linkedin.com/in/cynthia-olocco-141081295/" target="_blank" rel="author">
-          <img width="110" src="https://github.com/user-attachments/assets/9423d17b-0353-43a8-b96f-295bc6cce0a3"/>
-        </a>
-          <h4 style="margin-top: 1rem;">Cynthia <br>Olocco</h4>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://www.linkedin.com/in/cynthia-olocco-141081295/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-       <h4>Diseño UX/UI</h4>
-        <a href="https://www.linkedin.com/in/lisandroarguello/" target="_blank" rel="author">
-          <img width="110" src="https://hackathon-por-justina.web.app/assets/lisandro-Rd1NsCq6.jpg"/>
-        </a>
-          <h4 style="margin-top: 1rem;">Lisandro <br>Argüello</h4>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://www.linkedin.com/in/lisandroarguello/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-  </tr>
-</table>
+### Inicio rápido
 
-<table align='center'>
-  <tr>
-    <td align='center'>
-      <div>
-       <h4>Frontend</h4>
-        <a href="https://www.linkedin.com/in/facundomarcobacigalupo/" target="_blank" rel="author">
-          <img width="110" src="https://github.com/user-attachments/assets/316ec154-23d6-42e0-8e24-3593baa6414c"/>
-        </a>
-          <h4 style="margin-top: 1rem;">Facundo <br>Bacigalupo</h4>
-          <div style='display: flex; flex-direction: column'>
-          <a href="https://www.linkedin.com/in/facundomarcobacigalupo/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-       <h4>Frontend</h4>
-        <a href="https://www.linkedin.com/in/camilomartinez01/" target="_blank" rel="author">
-          <img width="110" src="https://github.com/user-attachments/assets/7d1265f4-0b6c-417a-a254-3957182efb25"/>
-        </a>
-          <h4 style="margin-top: 1rem;">Camilo <br>Martinez</h4>
-        <div>
-          <a href="https://www.linkedin.com/in/camilomartinez01/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-       <h4>Backend</h4>
-        <a href="https://www.linkedin.com/in/valeriedramosg/" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/129791003?v=4"/>
-        </a>
-          <h4 style="margin-top: 1rem;">Valerie <br>Ramos</h4>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://www.linkedin.com/in/valeriedramosg/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-       <h4>Backend</h4>
-        <a href="https://matias-acevedo.web.app/" target="_blank" rel="author">
-          <img width="110" src="https://github.com/user-attachments/assets/6da9d81a-4814-499b-b5bf-a31ab7fde797"/>
-        </a>
-          <h4 style="margin-top: 1rem;">Matias <br>Acevedo</h4>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://www.linkedin.com/in/matias-nicolas-acevedo/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-  </tr>
-</table>
+Desde la raíz del repo:
 
-<br>
+```bash
+./scripts/dev.sh
+```
 
-<div align='center'>
-  <h2> 🖼 Capturas de pantalla 📷 </h2>
-</div>
+**Resultado esperado:** al cabo de ~30 s (más la primera vez, por las descargas) aparece el cuadro `Justina.io running locally` con las URLs. Abrí http://localhost:5173. `Ctrl+C` apaga todo.
 
-<div align='center'>
-   <img src="https://github.com/user-attachments/assets/d95c666e-19d8-436a-af03-4119b3583ff7" alt="mini" width="666" height="500">
-</div>
+> ⚠️ Hoy el front llama a la API de producción, no a la local: el login desde la pantalla no funciona en local. Ver [T-003](docs/tasks/T-003-client-api-base-url-from-env.md).
 
-<div align='center'>
-   <img src="https://github.com/user-attachments/assets/51dc5524-62bb-4a3e-bb05-b3a016df7a7f" alt="mini" width="666" height="500">
-</div>
+### Paso a paso
 
-<div align='center'>
-   <img src="https://hackathon-por-justina.web.app/assets/device1-Bg3cbh21.png" alt="mini" >
-   <img src="https://hackathon-por-justina.web.app/assets/device2-CDj7m5wQ.png" alt="mini" >
-</div>
+Es lo mismo que hace `./scripts/dev.sh`, explicado. Usá **dos terminales**: una para el back y otra para el front.
 
-<br>
+**1. Clonar el repositorio.**
 
-<div align='center'>
-  <h2>🛠️ Tecnologías Utilizadas ⚡</h2>
-</div>
+```bash
+git clone https://github.com/MatiasNicolasAcevedo/h1-04-java-react.git
+```
 
-<div align='center'>
-  <h2>Frontend</h2>
-  </div>
+```bash
+cd h1-04-java-react
+```
 
-  <div align='center'>
+Resultado esperado: `ls` muestra `client/`, `server/`, `scripts/`, `docs/` y `docker-compose.yml`.
 
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) 
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![React](https://img.shields.io/static/v1?style=for-the-badge&message=React&color=222222&logo=React&logoColor=61DAFB&label=)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![Vercel](https://img.shields.io/static/v1?style=for-the-badge&message=Vercel&color=000000&logo=Vercel&logoColor=FFFFFF&label=)
-![Formik](https://img.shields.io/badge/FORMIK-172B4D?style=for-the-badge)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+**2. Comprobar las versiones de Java y Node** (desde la raíz del repo).
 
-  </div>
+```bash
+java -version
+```
 
-<div align='center'>
-  <h2>Backend</h2>
-  </div>
-  
-  <div align='center'>
-    
-![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) 
-![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
-![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) 
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=Cloudinary&logoColor=white)
-![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+```bash
+node -v
+```
 
-  </div>
+Resultado esperado: `openjdk version "21...` (o 17+) y `v22.x`. Si no coinciden, usá `sdk env install` y `nvm install` (ver Prerrequisitos).
 
-<div align='center'>
-  <h2>Organización</h2>
-  </div>
-  
-<div align="center">
-    <img src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white" alt="Slack" style="height: 30px;">
-    <img src="https://img.shields.io/badge/Trello-0052CC?logo=trello&logoColor=white" alt="Trello" style="height: 30px;">
-    <img src="https://img.shields.io/badge/Discord-5865F2?logo=Discord&logoColor=white" alt="Trello" style="height: 30px;">
-</div>
+**3. Crear el archivo de variables del back** (desde la raíz del repo). Los valores de ejemplo sirven tal cual para desarrollo local.
 
-<br>
-<br>
+```bash
+cp server/.env.example server/.env
+```
 
-<div align='center'>
-  <h2>🚀Swagger:🔥</h2>
-</div>
-<div align='center'>
-  <b>🔸 Documentación de los endpoints en Swagger UI 🧾:</b>
-    <a href="https://h1-04-java-react-qrtk.onrender.com/swagger-ui/index.html#/" target="_blank">[ Link a Swagger UI ]</a>
-</div>
+Resultado esperado: existe `server/.env`. Qué es cada variable: [docs/SETUP.md](docs/SETUP.md#variables-de-entorno).
 
-<br>
-<br>
+**4. Levantar la base de datos** (desde la raíz del repo).
 
-<div align='center'>
-  <h2>📊Diagrama Entidad Relacion:📈</h2>
-</div>
-<div align='center'>
-  <b>🔸 Link al Drive con el PDF del diagrama 💡:</b>
-    <a href="https://drive.google.com/file/d/1EWk72gLBysvzqzxzEhsiv4TPakScYo5L/view?usp=sharing" target="_blank">[ Link al Diagrama ]</a>
-</div>
+```bash
+docker compose up -d --wait db
+```
 
-  <br>
-  <br>
+Resultado esperado: termina con `Container justina-db Healthy`. Comprobalo con:
 
-<div align='center'>
-  <h2> 🎆 Agradecimientos 🎇 </h2>
-</div>
+```bash
+docker compose ps
+```
 
-<div align='center'>
-  <a href="https://www.nocountry.tech/" target="_blank" rel="noopener">
-    <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/c360f832-5983-4437-bbc7-7a4afe659302" alt="mini" width="343" height="193">
-  </a>
-</div>
+Debe mostrar `justina-db` con estado `Up ... (healthy)`.
 
+**5. Levantar el back** (terminal 1, desde la raíz del repo; queda corriendo).
+
+```bash
+cd server
+```
+
+```bash
+./mvnw spring-boot:run "-Dspring-boot.run.arguments=--spring.config.import=optional:file:.env[.properties]"
+```
+
+Resultado esperado: el log termina con `Started ServerApplication in ... seconds`. El argumento hace que el back lea `server/.env` ([T-002](docs/tasks/T-002-server-load-dotenv.md) lo va a hacer automático). Cada arranque recrea la base y carga los datos de ejemplo.
+
+Comprobalo desde otra terminal:
+
+```bash
+curl http://localhost:8080/v1/api/render/health
+```
+
+Debe responder `Server is awake and running!`. La documentación de la API queda en http://localhost:8080/swagger-ui/index.html.
+
+**6. Iniciar sesión con un usuario de prueba** (terminal 2, desde la raíz del repo). Usuarios de ejemplo: `admin1@admin.com` (admin), `doctor1@doctor.com` (doctor) y `juan@patient.com` (paciente). Las contraseñas de ejemplo están en el código del seed (`server/src/main/java/io/justina/server/data/DataLoader*.java`) y no se copian en la documentación. Este comando las lee de ahí y prueba el login del admin:
+
+```bash
+PASS=$(sed -n 's/.*encode("\([^"]*\)").*/\1/p' server/src/main/java/io/justina/server/data/DataLoaderAdmin.java) && curl -s -X POST http://localhost:8080/v1/api/auth/login -H "Content-Type: application/json" -d "{\"email\":\"admin1@admin.com\",\"password\":\"$PASS\"}"
+```
+
+Resultado esperado: un JSON con `"message":"Welcome to Justina.io"`, `"role":"ADMIN"` y un `token`.
+
+**7. Levantar el front** (terminal 2, desde la raíz del repo; queda corriendo).
+
+```bash
+cd client
+```
+
+```bash
+npm ci
+```
+
+```bash
+npm run dev
+```
+
+Resultado esperado: `VITE v5... ready` y `Local: http://localhost:5173/`. Abrí esa URL: se ve la landing de Justina.io; en `/login` se ve el formulario.
+
+> ⚠️ Hoy falla el login desde la pantalla en local: el front tiene la URL de la API de producción fija en el código. Ver [T-003](docs/tasks/T-003-client-api-base-url-from-env.md). La API local funciona (paso 6).
+
+**8. Correr los controles de calidad** (desde la raíz del repo).
+
+```bash
+./scripts/verify.sh
+```
+
+Resultado esperado: un resumen `server: ... client: ...` y `RESULT: ✅ PASS`.
+
+> ⚠️ Hoy falla: el test del back necesita una base de datos ([T-001](docs/tasks/T-001-server-test-infrastructure.md)) y ESLint marca errores ([T-004](docs/tasks/T-004-client-fix-lint-errors.md), [T-005](docs/tasks/T-005-client-prop-types.md)). El build de ambas partes sí pasa.
+
+**9. Apagar todo.** `Ctrl+C` en las terminales del back y del front, y desde la raíz del repo:
+
+```bash
+docker compose down
+```
+
+Resultado esperado: `Container justina-db Removed`. Para borrar también los datos de la base (volumen):
+
+```bash
+docker compose down -v
+```
+
+### Windows
+
+- Corré los comandos en **Git Bash** o **WSL** (los scripts `scripts/*.sh` son de bash). Docker Desktop debe estar abierto.
+- En PowerShell o CMD el paso 5 es: `.\mvnw.cmd spring-boot:run "-Dspring-boot.run.arguments=--spring.config.import=optional:file:.env[.properties]"` y el paso 3 es `copy server\.env.example server\.env`. ⚠️ No verificado en Windows.
+- El paso 6 usa `sed`: en PowerShell copiá la contraseña desde `DataLoaderAdmin.java` (línea con `passwordEncoder.encode`) o usá Swagger UI.
+
+### Problemas frecuentes
+
+| Síntoma | Causa | Solución |
+|---|---|---|
+| `./mvnw: Permission denied` | El wrapper perdió el permiso de ejecución | `chmod +x server/mvnw` |
+| `Cannot load driver class: ${DB_DRIVER_CLASS_NAME}` | El back no leyó `server/.env` | Crear `server/.env` (paso 3) y arrancar con el argumento del paso 5, desde `server/` |
+| `Connection to localhost:5432 refused` | La base no está levantada | `docker compose up -d --wait db` |
+| `Bind for 0.0.0.0:5432 failed: port is already allocated` | Hay otro PostgreSQL local en el 5432 | Detenerlo (p. ej. `sudo service postgresql stop`) o cambiar el puerto en `docker-compose.yml` (`"5433:5432"`) y en `DB_URL` de `server/.env` |
+| `Port 8080 was already in use` | Otra app usa el 8080 | Cerrarla, o agregar `--server.port=8081` al argumento del paso 5 |
+| `429 Too Many Requests` al bajar `postgres:16-alpine` | Límite de descargas anónimas de Docker Hub | `docker login`, o esperar y reintentar |
+| `release version 17 not supported` | Java menor a 17 | Instalar Java 21 (Prerrequisitos) |
+| El login en la pantalla falla o da error de CORS | El front llama a producción | Ver [T-003](docs/tasks/T-003-client-api-base-url-from-env.md) |
+| Faltan íconos en la interfaz | Se descargan de `api.iconify.design` en tiempo de ejecución | Requiere conexión a internet |
+
+Más detalle (variables, sin Docker, IDE, debugging): [docs/SETUP.md](docs/SETUP.md).
+
+_Verificado el 2026-10-10 en Linux (Ubuntu 24.04) con Java 21.0.12, Node 22.22.0, Docker 29.8.2 (Compose v5.6)._
+
+## Tests y calidad
+
+- `./scripts/verify.sh` es el control único: build + lint + tests del back y del front (`./scripts/verify.sh server` o `client` para una sola parte).
+- Estrategia, herramientas y cómo correr un solo test: [docs/TESTING.md](docs/TESTING.md).
+
+## Cómo se trabaja en el proyecto
+
+El repo está preparado para desarrollo asistido por agentes de IA: [AGENTS.md](AGENTS.md) es el punto de entrada para cualquier agente, y el flujo de ramas, commits y PRs está en [CONTRIBUTING.md](CONTRIBUTING.md). El tablero de tareas vive en [docs/BACKLOG.md](docs/BACKLOG.md).
+
+## Diseño y enlaces
+
+- Demo publicada: https://hackathon-por-justina.web.app/ (el back en Render free tier puede tardar en despertar).
+- [Diseño en Figma](https://www.figma.com/design/JqCxyf2Hfotlruh2glaqN6/Hackaton-Justina?node-id=25-19&t=abhMHMih64wc2uEW-1) · [Diagrama entidad-relación (PDF)](https://drive.google.com/file/d/1EWk72gLBysvzqzxzEhsiv4TPakScYo5L/view?usp=sharing) · [Video](https://youtu.be/RtNjyRXNGm8)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d95c666e-19d8-436a-af03-4119b3583ff7" alt="Captura de Justina.io" width="420">
+  <img src="https://github.com/user-attachments/assets/51dc5524-62bb-4a3e-bb05-b3a016df7a7f" alt="Captura de Justina.io" width="420">
+</p>
+
+## Equipo
+
+| Rol | Persona |
+|---|---|
+| Team Leader | [Diego Gonzalez](https://www.linkedin.com/in/diego-gonzalez-7937aa16/) |
+| QA Tester | [Yosmarli Parica](https://www.linkedin.com/in/yosmarli-parica-1156461a2/) |
+| Diseño UX/UI | [Cynthia Olocco](https://www.linkedin.com/in/cynthia-olocco-141081295/) · [Lisandro Argüello](https://www.linkedin.com/in/lisandroarguello/) |
+| Frontend | [Facundo Bacigalupo](https://www.linkedin.com/in/facundomarcobacigalupo/) · [Camilo Martinez](https://www.linkedin.com/in/camilomartinez01/) |
+| Backend | [Valerie Ramos](https://www.linkedin.com/in/valeriedramosg/) · [Matias Acevedo](https://www.linkedin.com/in/matias-nicolas-acevedo/) |
+
+Gracias a [No Country](https://www.nocountry.tech/) por la simulación laboral.
+
+## Licencia
+
+Todavía sin licencia definida (decisión pendiente, ver [docs/STATUS.md](docs/STATUS.md)). Mantenido por [Matias Acevedo](https://github.com/MatiasNicolasAcevedo).

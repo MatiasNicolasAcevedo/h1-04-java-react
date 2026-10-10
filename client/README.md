@@ -1,68 +1,66 @@
-# Hackaton Justina.io
+# Justina.io · client
 
-![image](https://github.com/user-attachments/assets/fabf69a8-43eb-4fb7-86a0-815ffa574794)
-![image](https://github.com/user-attachments/assets/40751e74-8adc-4415-b4d9-0caffd8adaba)
+SPA en React 18 + Vite 5 + Tailwind 3. Vistas por rol:
 
+- **Doctor:** ver pacientes y turnos del día, ficha e historia clínica, seguimiento del tratamiento, recetas, consulta con dictado por voz.
+- **Paciente:** turnos (pedir, ver, calendario), plan de tratamiento (medicación, nutrición, actividad física, estudios), descarga de historia clínica, configuración de perfil.
+- **Admin:** agenda, alta/edición de doctores y pacientes, trasplante cruzado.
 
-Esta aplicacion web fue diseñada con el proposito de cumplir y agilizar ciertos procesos en el ambito de la medicina.
-Tanto para pacientes como para los doctores, trae las siguientes funcionalidades para ahorrarles tiempo a las personas intervenidas.
+Proyecto completo, stack y paso a paso del entorno entero: [README raíz](../README.md).
 
-Docotes:
-- Poder ver a todos sus pacientes y las citas pendientes
+## Correr solo el front
 
-- Observar el estado del paciente, como se encuentra y si esta llevando el tratamiento como es debido
+Requisitos: Node 22 (`nvm install` en la raíz del repo usa `.nvmrc`). Comandos desde `client/`.
 
-- En una sencilla forna, puede agendar nuevas citas y medicar al paciente mediente la web de una manera muy rapida
+**1. Instalar dependencias.**
 
-- Investigar en pocos segundos la historia clinica del paciente
-
-Pacientes
-
-- Tener un programa especializado de dieta y toma de medicamentos
-
-- Asistencia en el proceso medicado
-  
-- Notificaciones para un correcto seguimiento
-
-- Asignacion de citas segun disponibilidad de doctores
-
-
-![image](https://github.com/user-attachments/assets/49c8b40b-a946-4717-827a-2593f1e8d82d)
-
-
-## Ejecutando las pruebas ⚙️
-
-Para probar la web, tienes 2 botones (doctor, paciente) para poder ver los 2 flujos que existen.
-
-A partir de aqui, podras probar todas las caracteristicas disponibles
-
-
-## Comenzando 🚀
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-### Instalación 🔧
-
-_Clona este repositorio en tu maquina local_
-
-_Luego en tu terminal escribe:_
-
+```bash
+npm ci
 ```
-git clone https://github.com/No-Country-simulation/h1-04-java-react.git
-```
-_Instala las dependencias necesarias_
 
-```
-cd h1-04-java-react
-npm i
+Resultado esperado: `added N packages` sin errores.
+
+**2. Levantar el servidor de desarrollo.**
+
+```bash
 npm run dev
 ```
 
+Resultado esperado: `Local: http://localhost:5173/`. Al abrirla se ve la landing de Justina.io.
 
-## Construido con 🛠️
- ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)  ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)   ![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
- ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)   ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Daisy UI](https://img.shields.io/badge/daisyUI-1ad1a5?style=for-the-badge&logo=daisyui&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
- 
+> ⚠️ Hoy el front llama a la API de producción (`https://h1-04-java-react-qrtk.onrender.com`), fija en `src/services/*.js`. Para usar el back local ver [T-003](../docs/tasks/T-003-client-api-base-url-from-env.md); el back local se levanta con los pasos 3–5 del [README raíz](../README.md#paso-a-paso).
 
- ## Deploy 📈 
-Aqui puedes probar la pagina desde una web ya creada
-[Demo](https://hackaton-no-country.vercel.app/)
+**3. Verificar.**
+
+```bash
+../scripts/verify.sh client
+```
+
+Resultado esperado: `client: ✅ deps ✅ lint ... ✅ build` y `RESULT: ✅ PASS`. ⚠️ Hoy falla el lint ([T-004](../docs/tasks/T-004-client-fix-lint-errors.md), [T-005](../docs/tasks/T-005-client-prop-types.md)).
+
+## Scripts
+
+| Script | Qué hace |
+|---|---|
+| `npm run dev` (o `npm start`) | Servidor de desarrollo de Vite en el puerto 5173 |
+| `npm run build` | Build de producción en `dist/` |
+| `npm run preview` | Sirve `dist/` para probar el build |
+| `npm run lint` | ESLint (falla con cualquier warning) |
+
+Los tests (`npm test`, Vitest) llegan con [T-006](../docs/tasks/T-006-client-test-infrastructure.md).
+
+## Estructura
+
+```
+src/
+  main.jsx, App.jsx         entrada
+  Router/                   Routers.jsx (rutas) y PrivateRoute.jsx (protección por rol)
+  context/DoctorContext.jsx sesión (token, rol, id) y datos compartidos
+  services/                 llamadas HTTP a la API
+  Components/<Área>/        pantallas: Admin, Doctor, Patient, Landing, Login, ...
+  helpers/atoms/            componentes reutilizables (botones, inputs, cards)
+  hooks/                    useSpeechRecognition
+  Assets/                   imágenes y PDFs
+```
+
+Deploy: Firebase Hosting (`firebase.json`). Contexto para agentes: [AGENTS.md](AGENTS.md).
