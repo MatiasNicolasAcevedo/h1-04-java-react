@@ -20,7 +20,7 @@ Desde `server/`, `./mvnw spring-boot:run` (sin argumentos) arranca leyendo `serv
 - `README.md` § Paso a paso, paso 5 y § Windows
 
 ## Archivos previstos
-- modificar: `server/src/main/resources/application.properties`, `scripts/dev.sh`, `README.md`, `server/README.md`, `server/AGENTS.md`, `AGENTS.md` (§10 Gotchas), `docs/SETUP.md` (§ Cómo se cargan, § IDE, § Debugging)
+- modificar: `server/src/main/resources/application.properties`, `scripts/dev.sh`, `README.md`, `server/README.md`, `server/AGENTS.md`, `AGENTS.md` (§11 Gotchas), `docs/SETUP.md` (§ Cómo se cargan, § IDE, § Debugging)
 
 ## Tests
 - No hay infraestructura de tests de back todavía (T-001); la verificación es por comando (criterios). No agregar tests.

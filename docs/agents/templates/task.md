@@ -1,8 +1,8 @@
 # T-NNN · <Título en imperativo>
-- Estado: Lista · Prioridad: P0–P3 · Esfuerzo: S/M/L · Agente: 🤖 ligero | 🧠 frontera
+- Estado: Lista · Prioridad: P0–P3 · Esfuerzo: S/M/L · Ejecuta: 🤖 agente gratuito | 🧠 modelo de frontera | 👤 dueño
 - Fase: <P0 Estabilizar | P1 Actualizar | P2 Terminar | P3 Pulir>
-- Rama: `<tipo>/T-NNN-slug` · Depende de: T-NNN · Spec/ADR: <links o "—">
-- Revisa: <ligero | frontera | dueño>
+- Rama: `<tipo>/T-NNN-slug` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-NNN · Spec/ADR: <links o "—">
+- Revisa: <🤖 agente gratuito (chat nuevo) | 🧠 modelo de frontera | 👤 dueño> (según la matriz de `CONTRIBUTING.md` §4)
 
 ## Por qué
 <2–4 líneas: problema y evidencia (archivo:línea o hallazgo de la auditoría)>
@@ -32,7 +32,7 @@
 - [ ] `./scripts/verify.sh` pasa y la cobertura no baja
 - [ ] <comando o prueba concreta con resultado esperado>
 - [ ] <comportamiento observable, p. ej. "GET /api/x sin token devuelve 401", cubierto por `XControllerTest#...`>
-- [ ] Si cambió cómo se levanta o configura el proyecto: README/SETUP actualizados y probados
+- [ ] Si cambió la configuración o cómo se levanta: `.example`, compose, README y SETUP actualizados y probados
 
 ## Notas de implementación  _(las completa quien implementa; también antes de compactar)_
 - Hecho: ... · Pendiente: ... · Próximo paso: ...
