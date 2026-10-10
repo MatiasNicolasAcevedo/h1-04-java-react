@@ -62,3 +62,7 @@ dist-ssr
 
 .firebase
 .firebaserc
+# Local environment files (never commit real values; see .env.example)
+.env
+.env.*
+!.env.example
