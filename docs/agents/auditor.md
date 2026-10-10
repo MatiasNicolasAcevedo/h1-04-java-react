@@ -14,7 +14,7 @@ Rama: `docs/audit-AAAA-MM-DD` · PR en draft desde el primer commit: `docs: peri
 
 ## Bloque B · Salud
 4. **Tests y cobertura:** `./scripts/verify.sh` y `./scripts/e2e.sh`; tendencia de cobertura; si creció, **subí el umbral** (JaCoCo / Vitest) en este PR; tests lentos o inestables → tareas; flujos críticos sin E2E (`docs/TESTING.md` §6).
-5. **Onboarding:** seguí el paso a paso del README desde cero (sin `.env`, sin `node_modules`, sin `target/`, `docker compose down -v`). Corregí lo que falle o sea ambiguo y actualizá la línea "Verificado el …".
+5. **Onboarding:** seguí el paso a paso del README desde cero (sin `.env`, sin `node_modules`, sin `target/`, `docker compose down -v`: está en la lista *deny* de `.claude/settings.json`, pedile al usuario que lo corra o que lo autorice). Corregí lo que falle o sea ambiguo y actualizá la línea "Verificado el …".
 6. **Deriva documental:** que `README`, `AGENTS.md`, `CONTRIBUTING.md`, `TESTING.md`, `ARCHITECTURE.md`, `SETUP.md` y los comandos sigan siendo ciertos (versiones, puertos, rutas, IDs de tareas).
 7. **Relevamiento liviano:** las 14 dimensiones de la auditoría inicial, **solo en lo que cambió** (incluye `npm audit` y versiones/EOL).
 → Persistir: secciones B en la auditoría, commit, push.

@@ -9,14 +9,14 @@ Sos el agente implementador. **Una tarea por sesión.** Seguí estos pasos en or
 
 ## 2. Primero lo que está en vuelo
 - Si un PR tuyo/de agente tiene **cambios pedidos** (comentario `CAMBIOS REQUERIDOS`): hacé checkout de esa rama y andá al paso 6 para atender solo eso.
-- Si ya hay **2 PR esperando revisión**: no tomes otra tarea. Avisá al usuario y terminá.
+- Si ya hay **un PR abierto** de una tarea (esperando revisión o merge): no tomes otra. Avisá al usuario qué falta (revisión o merge) y terminá. **Nunca se trabaja en paralelo.**
 
 ## 3. Línea de base
 - `git switch main && git pull`
 - `./scripts/verify.sh` → anotá el resumen. Comparalo con "Salud" de `docs/STATUS.md`: si falla **algo que STATUS no explica**, no empieces nada nuevo: avisá y proponé una tarea que lo arregle.
 
 ## 4. Tomar la tarea
-- La primera de "✅ Listas" marcada **🤖 ligero** (si sos un modelo de frontera, también 🧠), con dependencias hechas y sin PR ni rama remota `*/T-NNN-*`. Nunca tomes 👤 dueño.
+- **La primera** de "✅ Listas" (salteando solo las 👤 dueño). Si es 🧠 y sos el agente gratuito: no la tomes; decile al usuario «La próxima tarea es T-NNN y requiere modelo de frontera: abrí una sesión con ese modelo y escribí: Seguí `docs/agents/implementer.md`», y terminá.
 - Creá la rama exacta que indica la tarea (`git switch -c <tipo>/T-NNN-slug`).
 - Mové la tarea a "🔨 En curso / en revisión" en `docs/BACKLOG.md` y poné `Estado: En curso` en su archivo. Commit `docs(board): start T-NNN` + push (`git push -u origin <rama>`).
 - Abrí el **PR en draft** con el template: `gh pr create --draft --title "<tipo>(<alcance>): <descripción>" --body-file .github/pull_request_template.md` y completá "Tarea".

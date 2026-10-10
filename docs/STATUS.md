@@ -2,7 +2,7 @@
 _Actualizado: 2026-10-10 · por: agente de frontera (Claude) · sesión: auditoría (bootstrap T-000)_
 
 ## En una línea
-MVP de hackatón que compila y corre en local con PostgreSQL; sin tests reales ni CI, con fallas de seguridad 🔴 y el front apuntando a producción. Harness para agentes en el PR #1.
+MVP de hackatón que compila y corre en local con PostgreSQL; sin tests reales ni CI, con fallas de seguridad 🔴 y el front apuntando a producción. Harness para agentes mergeado (PR #1).
 
 ## Salud
 | Check | Estado | Nota |
@@ -20,9 +20,8 @@ MVP de hackatón que compila y corre en local con PostgreSQL; sin tests reales n
 P0 Estabilizar · 0/18 tareas · ver [ROADMAP](ROADMAP.md)
 
 ## Foco
-- PR abierto: #1 T-000 bootstrap (esperando revisión del dueño).
-- **Próximo paso exacto:** después de mergear #1, sesión nueva con `docs/agents/implementer.md`: el agente ligero toma **T-003** (URL de la API); en otra sesión, un modelo de frontera toma **T-001** (tests del back). Máx. 2 PR abiertos.
-- Tras el merge de #1: `git tag audit/2026-10-10 <sha-del-merge> && git push origin audit/2026-10-10`.
+- PRs abiertos: ninguno.
+- **Próximo paso exacto:** sesión nueva con el **agente gratuito** y escribir «Seguí `docs/agents/implementer.md`» → toma **T-003**. Orden de la cola (una tarea a la vez): T-003 🤖 → T-002 🤖 → T-014 🤖 → T-001 🧠 → T-004 🤖 → T-005 🤖 → T-018 🧠 → T-006 🧠 (ver BACKLOG).
 
 ## Decisiones pendientes del dueño
 - Matriz de permisos por rol (bloquea T-009; propuesta en la tarea).
@@ -36,4 +35,4 @@ P0 Estabilizar · 0/18 tareas · ver [ROADMAP](ROADMAP.md)
 - Configurar la protección de `main` (T-011).
 
 ## Últimas sesiones (máx. 5; las anteriores → archive/log/AAAA-MM.md)
-- 2026-10-10 · Claude (frontera) · auditó T-000 · auditoría inicial, harness (`verify.sh`, `dev.sh`, compose), README verificado, 18 tareas P0 · PR #1
+- 2026-10-10 · Claude (frontera) · auditó T-000 · auditoría inicial, harness (`verify.sh`, `dev.sh`, compose), README verificado, 18 tareas P0 · PR #1 (revisado y mergeado por Claude a pedido del dueño)
