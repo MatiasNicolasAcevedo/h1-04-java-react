@@ -22,7 +22,7 @@ En desarrollo el front usa `http://localhost:8080` (desde `client/.env`); el bui
 
 ## Archivos previstos
 - crear: `client/src/services/api.js`, `client/.env.example`, `client/.env.production`
-- modificar: los 4 `client/src/services/*.js`, `AddPatientForm.jsx`, `.gitignore`, `README.md` (Inicio rápido y paso 7: quitar avisos ⚠️ T-003; agregar paso `cp client/.env.example client/.env`), `client/README.md`, `docs/SETUP.md` (§ Front), `AGENTS.md` (§10), `client/AGENTS.md`
+- modificar: los 4 `client/src/services/*.js`, `AddPatientForm.jsx`, `.gitignore`, `README.md` (Inicio rápido y paso 7: quitar avisos ⚠️ T-003; agregar paso `cp client/.env.example client/.env`), `client/README.md`, `docs/SETUP.md` (§ Front), `AGENTS.md` (§6 Configuración y §11 Gotchas), `client/AGENTS.md`
 
 ## Tests
 - No hay infraestructura de tests de front todavía (T-006): verificación por comandos. No agregar librerías de test.

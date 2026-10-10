@@ -1,5 +1,5 @@
 # T-020 · Containerize the full app and complete the harness
-- Estado: Bloqueada (espera T-002 y T-003) · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🧠 modelo de frontera
+- Estado: Lista (en la cola después de T-003 y T-002, de las que depende) · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🧠 modelo de frontera
 - Fase: P0 Estabilizar
 - Rama: `build/T-020-containerize-full-app` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-002, T-003 · Spec/ADR: —
 - Revisa: 🧠 modelo de frontera (sesión nueva o sub-agente si el dueño lo pide) + 👤 dueño
