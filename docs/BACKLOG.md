@@ -3,14 +3,15 @@
 > si es 🧠 y sos el agente gratuito, no la tomes: avisá al dueño que la siguiente va con modelo de frontera ·
 > una tarea con PR abierto o rama remota `*/T-NNN-*` está tomada ·
 > formato: `- T-NNN · Pn · S/M/L · 🤖 ligero|🧠 frontera|👤 dueño · Título → [tarea](tasks/T-NNN-slug.md)`
-> Próximo ID libre: T-019
+> Próximo ID libre: T-021
 
 ## 🔨 En curso / en revisión (con su PR)
-- (vacío)
+- T-019 · P0 · M · 🧠 frontera · Alinear flujo de agentes y docs con el prompt de bootstrap v3 → [tarea](tasks/T-019-align-agent-workflow-with-bootstrap-v3.md) · PR en draft
 
 ## ✅ Listas (en orden de ejecución, máx. 10)
 - T-003 · P0 · S · 🤖 ligero · URL de la API desde `VITE_API_URL` → [tarea](tasks/T-003-client-api-base-url-from-env.md)
 - T-002 · P0 · S · 🤖 ligero · El back carga `server/.env` solo → [tarea](tasks/T-002-server-load-dotenv.md)
+- T-020 · P0 · M · 🧠 frontera · Contenerizar la app completa y completar el harness (depende de T-002 y T-003, que van antes) → [tarea](tasks/T-020-containerize-full-app-and-complete-harness.md)
 - T-014 · P0 · S · 🤖 ligero · Quitar `console.log` con credenciales y datos personales → [tarea](tasks/T-014-client-remove-credential-logs.md)
 - T-001 · P0 · M · 🧠 frontera · Infraestructura de tests del back (Testcontainers + JaCoCo) → [tarea](tasks/T-001-server-test-infrastructure.md)
 - T-004 · P0 · M · 🤖 ligero · Errores de ESLint (salvo prop-types y hooks) → [tarea](tasks/T-004-client-fix-lint-errors.md)
