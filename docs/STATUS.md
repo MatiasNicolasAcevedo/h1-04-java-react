@@ -2,12 +2,12 @@
 _Actualizado: 2026-10-10 · por: agente de frontera · sesión: auditoría (bootstrap T-000)_
 
 ## En una línea
-Bootstrap en curso: PC2 (auditoría completa) alcanzado.
+Bootstrap en curso: PC3 (harness, README y guías) alcanzado.
 
 ## Salud
 | Check | Estado | Nota |
 |---|---|---|
-| verify.sh | ❌ no existe todavía | se crea en este PR |
+| verify.sh | ❌ | server: test sin DB (T-001) · client: lint (T-004, T-005) |
 | CI en main | sin CI | |
 | Levantar en local (README) | ✅ back + DB verificados 2026-10-10 | front apunta a producción |
 | Cobertura back / front | ⚠️ no medida / sin tests | |
@@ -17,4 +17,4 @@ Bootstrap en curso: PC2 (auditoría completa) alcanzado.
 
 ## Foco
 - PR abierto: T-000 bootstrap (draft).
-- **Próximo paso exacto:** Fase 3 del bootstrap (harness, testing, git, README, docs).
+- **Próximo paso exacto:** Fase 3.10–3.13 del bootstrap (tablero, tareas, protocolos de agentes).
