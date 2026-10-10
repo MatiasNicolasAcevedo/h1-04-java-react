@@ -7,7 +7,7 @@ set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LOG_DIR="${VERIFY_LOG_DIR:-${TMPDIR:-/tmp}/justina-verify}"
 TARGET="${1:-all}"
-mkdir -p "$LOG_DIR"
+mkdir -p "$LOG_DIR" && LOG_DIR="$(cd "$LOG_DIR" && pwd)"  # absolute: the script cd's into each part
 
 FAILED=0
 SUMMARY_SERVER=""
