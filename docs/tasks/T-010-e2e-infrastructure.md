@@ -1,8 +1,8 @@
 # T-010 · Set up Playwright E2E smoke tests and scripts/e2e.sh
-- Estado: Bloqueada (espera T-002, T-003, T-007) · Prioridad: P0 · Esfuerzo: M · Agente: 🧠 frontera
+- Estado: Bloqueada (espera T-002, T-003, T-007) · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🧠 modelo de frontera
 - Fase: P0 Estabilizar
-- Rama: `test/T-010-e2e-infrastructure` · Depende de: T-002, T-003, T-007 · Spec/ADR: docs/TESTING.md §1 (E2E)
-- Revisa: ligero (segunda mirada) + dueño
+- Rama: `test/T-010-e2e-infrastructure` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-002, T-003, T-007 · Spec/ADR: docs/TESTING.md §1 (E2E)
+- Revisa: 🧠 modelo de frontera (sesión nueva, o sub-agente si el dueño lo pide) + 👤 dueño
 
 ## Por qué
 Ningún test cubre los flujos de punta a punta (auditoría §4.7). En la auditoría el login por rol se probó a mano con Playwright redirigiendo la URL de producción; con T-003 eso deja de hacer falta.

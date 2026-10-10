@@ -1,8 +1,8 @@
 # T-018 · Fix the 3 react-hooks/exhaustive-deps warnings without changing behavior
-- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Agente: 🧠 frontera
+- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🧠 modelo de frontera
 - Fase: P0 Estabilizar
-- Rama: `fix/T-018-hooks-exhaustive-deps` · Depende de: — · Spec/ADR: —
-- Revisa: ligero en sesión nueva
+- Rama: `fix/T-018-hooks-exhaustive-deps` (crearla desde `main` actualizado antes del primer commit) · Depende de: — · Spec/ADR: —
+- Revisa: 🧠 modelo de frontera (sesión nueva, o sub-agente si el dueño lo pide) + 👤 dueño
 
 ## Por qué
 `npm run lint` usa `--max-warnings 0`, así que 3 warnings `react-hooks/exhaustive-deps` bastan para que falle (auditoría §3): `src/Components/Doctor/DoctorConfiguration/DoctorConfiguration.jsx:49`, `src/Components/Doctor/PreviousConsultation/PreviousConsultation.jsx:61`, `src/Components/Patient/Turn/NewTurn/NewTurn.jsx:134`. Agregar dependencias a ciegas puede crear loops de requests; por eso es 🧠.

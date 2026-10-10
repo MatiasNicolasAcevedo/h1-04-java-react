@@ -1,8 +1,8 @@
 # T-017 · Return 400/404 for validation and unknown routes without leaking internals
-- Estado: Bloqueada (espera T-015) · Prioridad: P0 · Esfuerzo: M · Agente: 🤖 ligero
+- Estado: Bloqueada (espera T-015) · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🤖 agente gratuito
 - Fase: P0 Estabilizar
-- Rama: `fix/T-017-error-responses` · Depende de: T-001, T-015 · Spec/ADR: —
-- Revisa: frontera (seguridad: fuga de detalles)
+- Rama: `fix/T-017-error-responses` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-001, T-015 · Spec/ADR: —
+- Revisa: 🧠 modelo de frontera (esfuerzo M y seguridad: fuga de detalles)
 
 ## Por qué
 `handler/GlobalExceptionHandler.java:23-29` convierte toda excepción no prevista en 500 con `details = ex.getMessage()`: un body inválido en `/v1/api/auth/login` devuelve 500 con el mensaje interno de Spring, y una ruta inexistente (`GET /v1/api/doctors`) devuelve 500 (auditoría §4.3, §4.6).

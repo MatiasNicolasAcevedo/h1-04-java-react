@@ -5,7 +5,7 @@
 - Revisa: 🧠 modelo de frontera (sub-agente con contexto limpio, a pedido explícito del dueño)
 
 ## Por qué
-El bootstrap (T-000, PR #1) se hizo con una versión anterior del prompt: el ejecutor "ligero" era Qwen Code con `gh`, sin traspasos explícitos entre ejecutores ni revisión con sub-agente. La versión vigente (v3) define 🤖 = agente gratuito de IntelliJ IDEA (modelo Qwen, sin `gh` ni `/compact`) y un formato de "Traspasos".
+El bootstrap (T-000, PR #1) se hizo con una versión anterior del prompt: el ejecutor barato era un agente de terminal con `gh` y su propio comando de compactar, sin traspasos explícitos entre ejecutores ni revisión con sub-agente. La versión vigente (v3) define 🤖 = agente gratuito de IntelliJ IDEA (modelo Qwen, sin `gh` ni `/compact`) y un formato de "Traspasos".
 
 ## Objetivo
 Docs, protocolos, tareas y configuración de agentes reflejan el modelo de trabajo v3; el 🤖 puede tomar T-003 leyendo solo los docs vivos.
@@ -26,7 +26,7 @@ Docs, protocolos, tareas y configuración de agentes reflejan el modelo de traba
 - Solo docs: sin tests. Chequeos por script (links, IDs, tamaños, `git grep`).
 
 ## Criterios de aceptación
-- [ ] `git grep -n -i -E "ligero|qwen code|/compress" -- ':!docs/audits' ':!docs/archive'` no devuelve resultados.
+- [ ] `git grep -n -i -E "l[i]gero|q[w]en code|/c[o]mpress" -- ':!docs/audits' ':!docs/archive'` no devuelve resultados (los corchetes evitan que la línea se encuentre a sí misma).
 - [ ] Links relativos e IDs `T-NNN` de los docs resuelven a archivos existentes (script).
 - [ ] Tamaños: AGENTS ≤ 150, protocolos ≤ 80, STATUS ≤ 60, BACKLOG ≤ 120, tareas ≤ 80 líneas.
 - [ ] Las 18 tareas tienen `Ejecuta:` y `Revisa:` con ícono según la matriz de `CONTRIBUTING.md` §4.
