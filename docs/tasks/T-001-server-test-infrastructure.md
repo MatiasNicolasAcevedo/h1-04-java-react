@@ -1,8 +1,8 @@
 # T-001 · Set up server test infrastructure (Testcontainers + JaCoCo)
-- Estado: Lista · Prioridad: P0 · Esfuerzo: M · Agente: 🧠 frontera
+- Estado: Lista · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🧠 modelo de frontera
 - Fase: P0 Estabilizar
-- Rama: `test/T-001-server-test-infrastructure` · Depende de: — · Spec/ADR: [ADR 0002](../adr/0002-testcontainers-postgresql-for-tests.md)
-- Revisa: ligero (segunda mirada) + dueño
+- Rama: `test/T-001-server-test-infrastructure` (crearla desde `main` actualizado antes del primer commit) · Depende de: — · Spec/ADR: [ADR 0002](../adr/0002-testcontainers-postgresql-for-tests.md)
+- Revisa: 🧠 modelo de frontera (sesión nueva, o sub-agente si el dueño lo pide) + 👤 dueño
 
 ## Por qué
 `./scripts/verify.sh server` falla: el único test (`ServerApplicationTests.contextLoads`) necesita una base y variables de entorno (`Cannot load driver class: ${DB_DRIVER_CLASS_NAME}`, auditoría §3). No hay cobertura medida ni un test de integración de referencia para las tareas 🤖.

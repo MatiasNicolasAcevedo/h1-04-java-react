@@ -1,8 +1,8 @@
 # T-009 · Enforce role-based authorization on all endpoints
-- Estado: Bloqueada (decisión del dueño) · Prioridad: P0 · Esfuerzo: L · Agente: 🧠 frontera
+- Estado: Bloqueada (decisión del dueño) · Prioridad: P0 · Esfuerzo: L · Ejecuta: 🧠 modelo de frontera
 - Fase: P0 Estabilizar
-- Rama: `fix/T-009-role-based-authorization` · Depende de: T-008, T-015 · Spec/ADR: matriz abajo (pasa a `docs/specs/authorization.md` al confirmarse)
-- Revisa: ligero (segunda mirada) + **dueño**
+- Rama: `fix/T-009-role-based-authorization` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-008, T-015 · Spec/ADR: matriz abajo (pasa a `docs/specs/authorization.md` al confirmarse)
+- Revisa: 🧠 modelo de frontera (sesión nueva, o sub-agente si el dueño lo pide) + 👤 dueño
 
 ## Por qué
 🔴 El back solo exige "autenticado": un PACIENTE obtiene 200 en `GET /v1/api/users/getAllUsers` y `GET /v1/api/patients/getAllPatients` (probado con curl, auditoría §4.6). Datos médicos y personales expuestos a cualquier usuario.

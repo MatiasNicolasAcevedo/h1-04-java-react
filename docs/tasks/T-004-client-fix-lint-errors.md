@@ -1,8 +1,8 @@
 # T-004 · Fix ESLint errors other than react/prop-types
-- Estado: Lista · Prioridad: P0 · Esfuerzo: M · Agente: 🤖 ligero
+- Estado: Lista · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🤖 agente gratuito
 - Fase: P0 Estabilizar
-- Rama: `fix/T-004-client-fix-lint-errors` · Depende de: — · Spec/ADR: —
-- Revisa: ligero en sesión nueva
+- Rama: `fix/T-004-client-fix-lint-errors` (crearla desde `main` actualizado antes del primer commit) · Depende de: — · Spec/ADR: —
+- Revisa: 🧠 modelo de frontera (esfuerzo M)
 
 ## Por qué
 `npm run lint` falla con 87 problemas (auditoría §3). Esta tarea cubre los **53 que no son `react/prop-types`** ni `react-hooks/exhaustive-deps`: `no-unused-vars` (41), `no-irregular-whitespace` (5), `react/no-unknown-property` (2), `react/jsx-key` (1), `no-undef` (1) y 3 directivas `eslint-disable` sin uso (`src/Components/ChatBot/MainChatBot.jsx:1`, `src/Components/Patient/Treatment/Plans/PlanGim.jsx:1`, `src/Components/Patient/Treatment/Plans/PlanNutrition/PlanNutrition.jsx:1`). Son cambios de 1 línea en ~28 archivos: se acepta superar el tope orientativo de archivos.

@@ -1,8 +1,8 @@
 # T-015 · Add characterization tests for login and protected endpoints
-- Estado: Bloqueada (espera T-001) · Prioridad: P0 · Esfuerzo: S · Agente: 🤖 ligero
+- Estado: Bloqueada (espera T-001) · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
 - Fase: P0 Estabilizar
-- Rama: `test/T-015-auth-characterization-tests` · Depende de: T-001 · Spec/ADR: docs/TESTING.md §4 (caracterización)
-- Revisa: frontera (seguridad)
+- Rama: `test/T-015-auth-characterization-tests` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-001 · Spec/ADR: docs/TESTING.md §4 (caracterización)
+- Revisa: 🧠 modelo de frontera (seguridad)
 
 ## Por qué
 Los flujos críticos 1 y 2 (login por rol, acceso sin token) no tienen tests (auditoría §4.7). T-008/T-009/T-017 van a cambiar seguridad y errores: primero hay que fijar el comportamiento actual.

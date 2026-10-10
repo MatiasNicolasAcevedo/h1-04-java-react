@@ -1,8 +1,8 @@
 # T-003 · Read the API base URL from VITE_API_URL
-- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Agente: 🤖 ligero
+- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
 - Fase: P0 Estabilizar
-- Rama: `fix/T-003-client-api-base-url-from-env` · Depende de: — · Spec/ADR: —
-- Revisa: frontera (toca front, configuración y deploy)
+- Rama: `fix/T-003-client-api-base-url-from-env` (crearla desde `main` actualizado antes del primer commit) · Depende de: — · Spec/ADR: —
+- Revisa: 🧠 modelo de frontera (toca configuración y deploy del front)
 
 ## Por qué
 La URL de la API está fija a producción en 5 lugares (`client/src/services/authService.js:1`, `doctorServices.js:1`, `patientServices.js:1`, `appointmentService.js:1`, `client/src/Components/Admin/AddPatientForm.jsx:60`). En local el front nunca habla con el back local (auditoría §4.4, 🔴).
@@ -22,7 +22,7 @@ En desarrollo el front usa `http://localhost:8080` (desde `client/.env`); el bui
 
 ## Archivos previstos
 - crear: `client/src/services/api.js`, `client/.env.example`, `client/.env.production`
-- modificar: los 4 `client/src/services/*.js`, `AddPatientForm.jsx`, `.gitignore`, `README.md` (Inicio rápido y paso 7: quitar avisos ⚠️ T-003; agregar paso `cp client/.env.example client/.env`), `client/README.md`, `docs/SETUP.md` (§ Front), `AGENTS.md` (§10), `client/AGENTS.md`
+- modificar: los 4 `client/src/services/*.js`, `AddPatientForm.jsx`, `.gitignore`, `README.md` (Inicio rápido y paso 7: quitar avisos ⚠️ T-003; agregar paso `cp client/.env.example client/.env`), `client/README.md`, `docs/SETUP.md` (§ Front), `AGENTS.md` (§6 Configuración y §11 Gotchas), `client/AGENTS.md`
 
 ## Tests
 - No hay infraestructura de tests de front todavía (T-006): verificación por comandos. No agregar librerías de test.

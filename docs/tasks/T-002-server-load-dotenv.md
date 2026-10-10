@@ -1,8 +1,8 @@
 # T-002 · Load server/.env automatically on startup
-- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Agente: 🤖 ligero
+- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
 - Fase: P0 Estabilizar
-- Rama: `chore/T-002-server-load-dotenv` · Depende de: — · Spec/ADR: —
-- Revisa: ligero en sesión nueva
+- Rama: `chore/T-002-server-load-dotenv` (crearla desde `main` actualizado antes del primer commit) · Depende de: — · Spec/ADR: —
+- Revisa: 🧠 modelo de frontera (toca configuración)
 
 ## Por qué
 `application.properties:1` importa `optional:env.properties` del **classpath**, así que `server/.env` no se lee solo y hay que arrancar con un argumento largo (`-Dspring-boot.run.arguments=--spring.config.import=...`), auditoría §3 y §4.11.
@@ -20,7 +20,7 @@ Desde `server/`, `./mvnw spring-boot:run` (sin argumentos) arranca leyendo `serv
 - `README.md` § Paso a paso, paso 5 y § Windows
 
 ## Archivos previstos
-- modificar: `server/src/main/resources/application.properties`, `scripts/dev.sh`, `README.md`, `server/README.md`, `server/AGENTS.md`, `AGENTS.md` (§10 Gotchas), `docs/SETUP.md` (§ Cómo se cargan, § IDE, § Debugging)
+- modificar: `server/src/main/resources/application.properties`, `scripts/dev.sh`, `README.md`, `server/README.md`, `server/AGENTS.md`, `AGENTS.md` (§6 Configuración y §11 Gotchas), `docs/SETUP.md` (§ Cómo se cargan, § IDE, § Debugging)
 
 ## Tests
 - No hay infraestructura de tests de back todavía (T-001); la verificación es por comando (criterios). No agregar tests.

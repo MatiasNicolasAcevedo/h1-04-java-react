@@ -1,8 +1,8 @@
 # T-006 · Set up client test infrastructure (Vitest + Testing Library + MSW)
-- Estado: Lista · Prioridad: P0 · Esfuerzo: M · Agente: 🧠 frontera
+- Estado: Lista · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🧠 modelo de frontera
 - Fase: P0 Estabilizar
-- Rama: `test/T-006-client-test-infrastructure` · Depende de: — · Spec/ADR: docs/TESTING.md §1
-- Revisa: ligero (segunda mirada) + dueño
+- Rama: `test/T-006-client-test-infrastructure` (crearla desde `main` actualizado antes del primer commit) · Depende de: — · Spec/ADR: docs/TESTING.md §1
+- Revisa: 🧠 modelo de frontera (sesión nueva, o sub-agente si el dueño lo pide) + 👤 dueño
 
 ## Por qué
 El front no tiene tests ni script `test` (auditoría §4.7). Las tareas 🤖 de front (T-016 y la caracterización) necesitan un test de referencia para copiar el estilo.

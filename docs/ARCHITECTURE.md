@@ -74,18 +74,20 @@ erDiagram
 
 ## Endpoints principales (71 operaciones; lista completa en Swagger)
 
-| Recurso | Base | Operaciones |
-|---|---|---|
-| Auth | `/v1/api/auth` | `POST /login`, `POST /admin-register` |
-| Usuarios | `/v1/api/users` | getAll, getById, update, updateEmail/Password/Document, addDocumentImages, deactivate, delete |
-| Doctores | `/v1/api/doctors` | create, getAllDoctors, getDoctorById, updateDoctor, deactivateDoctor |
-| Pacientes | `/v1/api/patients` | create, getAll/ById, update, add/updateMedicalHistory, add/updatePathology, uploadFile, getPatientFiles, deactivate |
-| Turnos | `/v1/api/appointments` | createAppointment, getAll, getById, getByDoctorId, getByPatientId, update, deactivate |
-| Tratamientos | `/v1/api/treatments` | addTreatmentToPatient, addMedicalPrescription, getAll/ById, update, deactivate |
-| Recetas | `/v1/api/medical-prescriptions` | CRUD + deactivate |
-| Catálogos | `/v1/api/{medications,laboratories,financiers,institutions,roles}` | CRUD + deactivate |
-| Imágenes | `/v1/api/images/upload` | subida a Cloudinary |
-| Health | `/v1/api/render/health` | público, texto plano |
+"Pantalla que lo usa": `grep` de `client/src/services/*.js` y de sus llamadas en `client/src/Components` (2026-10-10). Rutas relativas a `client/src/Components/`; "vía contexto" = la llamada está en `context/DoctorContext.jsx`.
+
+| Recurso | Base | Operaciones | Pantalla que lo usa |
+|---|---|---|---|
+| Auth | `/v1/api/auth` | `POST /login`, `POST /admin-register` | login → `Login/Login.jsx` (vía contexto) · admin-register → ninguna |
+| Usuarios | `/v1/api/users` | getAll, getById, update, updateEmail/Password/Document, addDocumentImages, deactivate, delete | ninguna |
+| Doctores | `/v1/api/doctors` | create, getAllDoctors, getDoctorById, updateDoctor, deactivateDoctor | getAllDoctors → `Admin/Doctors.jsx`, `Patient/Turn/NewTurn/NewTurn.jsx` (vía contexto) · getDoctorById → `Doctor/DoctorConfiguration/` (vía contexto) · resto → ninguna |
+| Pacientes | `/v1/api/patients` | create, getAll/ById, update, add/updateMedicalHistory, add/updatePathology, uploadFile, getPatientFiles, deactivate | create → `Admin/AddPatientForm.jsx:60` (`fetch` directo) · getPatientById → `Patient/HomePatient/`, `Patient/ProfileConfiguration/`, `Patient/Treatment/Plans/PlanMedication.jsx`, `Doctor/PreviousConsultation/`, `Doctor/PatientRecord/MedicalHistory/` (vía contexto) · resto → ninguna |
+| Turnos | `/v1/api/appointments` | createAppointment, getAll, getById, getByDoctorId, getByPatientId, update, deactivate | create → `Patient/Turn/NewTurn/` · getByPatientId → `Patient/Turn/Turn.jsx`, `Patient/Turn/TurnCalendar/`, `Patient/Turn/NewTurn/`, `Doctor/PreviousConsultation/` · getByDoctorId → `Doctor/PatientList/`, `Doctor/Patients/` · deactivate → `Patient/Turn/Turn.jsx` |
+| Tratamientos | `/v1/api/treatments` | addTreatmentToPatient, addMedicalPrescription, getAll/ById, update, deactivate | ninguna (planes de tratamiento con datos mock) |
+| Recetas | `/v1/api/medical-prescriptions` | CRUD + deactivate | ninguna |
+| Catálogos | `/v1/api/{medications,laboratories,financiers,institutions,roles}` | CRUD + deactivate | ninguna |
+| Imágenes | `/v1/api/images/upload` | subida a Cloudinary | ninguna |
+| Health | `/v1/api/render/health` | público, texto plano | ninguna (lo usa `ServerWakeUpScheduler`) |
 
 Convención: rutas con verbo (`/getAllDoctors`), respuestas `Map` con `message` + dato.
 

@@ -1,8 +1,8 @@
 # T-014 · Remove console.log calls that print credentials or personal data
-- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Agente: 🤖 ligero
+- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
 - Fase: P0 Estabilizar
-- Rama: `fix/T-014-remove-credential-logs` · Depende de: — · Spec/ADR: —
-- Revisa: ligero en sesión nueva
+- Rama: `fix/T-014-remove-credential-logs` (crearla desde `main` actualizado antes del primer commit) · Depende de: — · Spec/ADR: —
+- Revisa: 🤖 agente gratuito (chat nuevo) · S, solo borra líneas
 
 ## Por qué
 🟠 El login imprime email y contraseña en la consola del navegador (`client/src/Components/Login/Login.jsx:49-50`); otros `console.log` imprimen el token o datos de pacientes (auditoría §4.6).

@@ -17,6 +17,7 @@
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
+      "Bash(git show:*)",
       "Bash(git branch:*)",
       "Bash(git ls-remote:*)",
       "Bash(gh pr view:*)",
@@ -29,7 +30,9 @@
       "Read(./client/.env)",
       "Bash(git push --force:*)",
       "Bash(git push -f:*)",
-      "Bash(docker compose down -v:*)"
+      "Bash(docker compose down -v:*)",
+      "Bash(git push origin main:*)",
+      "Bash(git push -u origin main:*)"
     ]
   }
 }

@@ -1,8 +1,8 @@
 # T-013 · Run the Render keep-alive ping only when enabled by property
-- Estado: Bloqueada (espera T-001) · Prioridad: P0 · Esfuerzo: S · Agente: 🤖 ligero
+- Estado: Bloqueada (espera T-001) · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
 - Fase: P0 Estabilizar
-- Rama: `fix/T-013-keepalive-only-in-prod` · Depende de: T-001 · Spec/ADR: —
-- Revisa: ligero en sesión nueva
+- Rama: `fix/T-013-keepalive-only-in-prod` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-001 · Spec/ADR: —
+- Revisa: 🧠 modelo de frontera (toca configuración)
 
 ## Por qué
 `util/ServerWakeUpScheduler.java` hace `GET https://h1-04-java-react-qrtk.onrender.com/v1/api/render/health` cada 14 min en **todos** los entornos (local, tests, CI), con `System.out/err` (auditoría §4.3).

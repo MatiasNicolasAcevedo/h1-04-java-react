@@ -1,5 +1,5 @@
 # T-011 · Configure main branch protection (owner)
-- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Agente: 👤 dueño (no lo hace un agente)
+- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Ejecuta: 👤 dueño (no lo hace un agente)
 - Fase: P0 Estabilizar
 - Rama: — (configuración en GitHub) · Depende de: — (el check `verify` se agrega cuando exista T-007) · Spec/ADR: CONTRIBUTING §6
 - Revisa: —

@@ -1,8 +1,8 @@
 # T-016 · Redirect unauthenticated users in PrivateRoute instead of loading forever
-- Estado: Bloqueada (espera T-006) · Prioridad: P0 · Esfuerzo: S · Agente: 🤖 ligero
+- Estado: Bloqueada (espera T-006) · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
 - Fase: P0 Estabilizar
-- Rama: `fix/T-016-private-route-redirect` · Depende de: T-006 · Spec/ADR: —
-- Revisa: ligero en sesión nueva
+- Rama: `fix/T-016-private-route-redirect` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-006 · Spec/ADR: —
+- Revisa: 🧠 modelo de frontera (toca el flujo de sesión)
 
 ## Por qué
 `client/src/Router/PrivateRoute.jsx:8-20`: `loading` empieza en `true` y solo pasa a `false` cuando `authData !== null`. Sin sesión, la ruta privada muestra "Loading..." para siempre en vez de redirigir a `/` (auditoría §4.4). Además `DoctorContext` restaura `authData` de `localStorage` en un `useEffect` (`client/src/context/DoctorContext.jsx:26-33`), así que en el primer render siempre es `null`.

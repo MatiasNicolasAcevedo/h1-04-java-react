@@ -1,8 +1,8 @@
 # T-008 · Restrict admin registration to admins and move seed passwords to env
-- Estado: Bloqueada (espera T-001) · Prioridad: P0 · Esfuerzo: M · Agente: 🧠 frontera
+- Estado: Bloqueada (espera T-001) · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🧠 modelo de frontera
 - Fase: P0 Estabilizar
-- Rama: `fix/T-008-secure-admin-register` · Depende de: T-001 (para los tests) · Spec/ADR: —
-- Revisa: ligero (segunda mirada) + **dueño** (seguridad)
+- Rama: `fix/T-008-secure-admin-register` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-001 (para los tests) · Spec/ADR: —
+- Revisa: 🧠 modelo de frontera (sesión nueva, o sub-agente si el dueño lo pide) + 👤 dueño
 
 ## Por qué
 🔴 `POST /v1/api/auth/admin-register` es público (`config/security/SecurityConfig.java:41` permite `/v1/api/auth/*`) y crea usuarios ADMIN (`services/impl/RegisterServiceImpl.java:69-83`): cualquiera se crea un admin. 🔴 Las contraseñas de los usuarios seed están en el código (`data/DataLoaderAdmin.java:72`, `DataLoaderDoctor.java:108`, `DataLoaderPatient.java:94`) y valen en la demo pública; los botones de demo del login las autocompletan (`client/src/Components/Login/Login.jsx:81,85,89`). Además `User.getAuthorities()` devuelve una lista vacía (`entities/User.java:67-69`), así que hoy no se puede autorizar por rol.

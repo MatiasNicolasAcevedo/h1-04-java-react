@@ -1,8 +1,8 @@
 # T-005 · Declare PropTypes in the 14 components that fail react/prop-types
-- Estado: Lista · Prioridad: P0 · Esfuerzo: M · Agente: 🤖 ligero
+- Estado: Lista · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🤖 agente gratuito
 - Fase: P0 Estabilizar
-- Rama: `fix/T-005-client-prop-types` · Depende de: — (si T-004 ya se mergeó, partir de `main` actualizado) · Spec/ADR: —
-- Revisa: ligero en sesión nueva
+- Rama: `fix/T-005-client-prop-types` (crearla desde `main` actualizado antes del primer commit) · Depende de: — (si T-004 ya se mergeó, partir de `main` actualizado) · Spec/ADR: —
+- Revisa: 🧠 modelo de frontera (esfuerzo M)
 
 ## Por qué
 `npm run lint` reporta 31 errores `react/prop-types` en 14 componentes (auditoría §3, §4.10). El proyecto ya usa `prop-types` (dependencia en `client/package.json`) y tiene un ejemplo: `client/src/helpers/atoms/FormComponent.jsx`.

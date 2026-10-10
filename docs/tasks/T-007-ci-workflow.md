@@ -1,8 +1,8 @@
 # T-007 · Add CI workflow running verify on push and PR
-- Estado: Bloqueada · Prioridad: P0 · Esfuerzo: S · Agente: 🧠 frontera
+- Estado: Bloqueada · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🧠 modelo de frontera
 - Fase: P0 Estabilizar
-- Rama: `ci/T-007-ci-workflow` · Depende de: T-001, T-004, T-005, T-018 (verify en verde) · Spec/ADR: —
-- Revisa: ligero (segunda mirada) + dueño
+- Rama: `ci/T-007-ci-workflow` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-001, T-004, T-005, T-018 (verify en verde) · Spec/ADR: —
+- Revisa: 🧠 modelo de frontera (sesión nueva, o sub-agente si el dueño lo pide) + 👤 dueño
 
 ## Por qué
 No hay CI (auditoría §4.8). Agregarlo mientras `verify.sh` falla dejaría `main` en rojo permanente.

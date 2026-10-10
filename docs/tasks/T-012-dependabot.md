@@ -1,8 +1,8 @@
 # T-012 · Enable Dependabot for Maven, npm and GitHub Actions
-- Estado: Bloqueada (espera T-007: CI en verde) · Prioridad: P0 · Esfuerzo: S · Agente: 🤖 ligero
+- Estado: Bloqueada (espera T-007: CI en verde) · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
 - Fase: P0 Estabilizar
-- Rama: `ci/T-012-dependabot` · Depende de: T-007 · Spec/ADR: CONTRIBUTING §8
-- Revisa: frontera (toca CI)
+- Rama: `ci/T-012-dependabot` (crearla desde `main` actualizado antes del primer commit) · Depende de: T-007 · Spec/ADR: CONTRIBUTING §8
+- Revisa: 🧠 modelo de frontera (toca CI)
 
 ## Por qué
 No hay actualización automática de dependencias y `npm audit` reporta 24 high (auditoría §4.2, §4.8). Sin CI en verde, los PR de Dependabot no se podrían evaluar.
