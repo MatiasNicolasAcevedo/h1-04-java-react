@@ -26,6 +26,7 @@ P0 Estabilizar · 0/18 tareas · ver [ROADMAP](ROADMAP.md)
 
 ## Decisiones pendientes del dueño
 - Matriz de permisos por rol (bloquea T-009; propuesta en la tarea).
+- ¿Se conservan los botones de login demo que autocompletan credenciales? (afecta T-008)
 - Rotar las contraseñas seed en Render cuando se mergee T-008 (`SEED_DEFAULT_PASSWORD`).
 - ¿Se mantiene la demo pública en Render + Firebase? (P3)
 - Licencia del proyecto (equipo de 8 personas).
