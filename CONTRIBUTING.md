@@ -32,22 +32,24 @@ Refs: T-NNN
 - El PR actualiza tablero (`docs/BACKLOG.md`), archivo de tarea y `docs/STATUS.md`.
 
 ## 4. Revisión
-Todo PR lo revisa un agente **en una sesión nueva** siguiendo [docs/agents/reviewer.md](docs/agents/reviewer.md):
+Todo PR lo revisa un agente **en una sesión nueva** siguiendo [docs/agents/reviewer.md](docs/agents/reviewer.md). Ejecutores: 🧠 modelo de frontera · 🤖 agente gratuito (IntelliJ) · 👤 dueño (ver `AGENTS.md` §1).
 
-| PR | Implementa | Revisa |
-|---|---|---|
-| Tarea 🤖 de esfuerzo S, sin riesgo | ligero | ligero en sesión nueva |
-| Tarea 🤖 M, o que toca back y front, seguridad, datos o CI | ligero | frontera |
-| Tarea 🧠 | frontera | ligero en sesión nueva (segunda mirada) + dueño |
-| Dependabot | bot | ligero; si es versión mayor → tarea 🧠 |
+| PR | Implementa | Revisa | Quién lanza la revisión |
+|---|---|---|---|
+| Tarea 🤖 de esfuerzo S, sin riesgo | 🤖 agente gratuito | 🤖 agente gratuito, **chat nuevo** | 👤 abre el chat nuevo |
+| Tarea 🤖 M, o que toca back y front, seguridad, datos, configuración o CI | 🤖 agente gratuito | 🧠 modelo de frontera | 👤 abre una sesión de frontera |
+| Tarea 🧠 | 🧠 modelo de frontera | 🧠 sesión nueva o sub-agente (si el dueño lo pide) + 👤 | 👤 |
+| Dependabot | bot | 🤖; versión mayor → tarea 🧠 | 👤 |
 
-- Máximo **2 rondas** de cambios; después se escala a frontera o al dueño.
-- **Limitación de GitHub:** con la misma cuenta no se puede aprobar formalmente el propio PR. La revisión se publica como **comentario** con veredicto explícito en la primera línea: `APROBADO`, `CAMBIOS REQUERIDOS` o `ESCALAR`. Con una cuenta bot o GitHub App de revisión se usa una review formal.
+- La tarea indica en "Revisa" quién revisa, y la respuesta final de quien implementó dice exactamente qué abrir y qué escribir (formato "Traspasos").
+- Máximo **2 rondas** de cambios; después se escala a 🧠 o al 👤.
+- **Revisión con sub-agente (solo a pedido explícito del dueño para ese PR):** el 🧠 lanza un sub-agente con contexto limpio que sigue `reviewer.md`, publica su veredicto en el PR y, si pide cambios, el 🧠 los corrige en la misma rama y relanza la revisión (máx. 2 rondas; después escala al 👤).
+- **Limitación de GitHub:** con la misma cuenta no se puede aprobar formalmente el propio PR. La revisión se publica como **comentario** con veredicto explícito en la primera línea: `APROBADO`, `CAMBIOS REQUERIDOS` o `ESCALAR A 🧠/DUEÑO`. Sin `gh` (🤖), el revisor deja el texto y el 👤 lo pega.
 
 ## 5. Merge
-- **Squash merge**, solo con CI en verde y revisión `APROBADO`.
-- Política: **mergea el dueño** del repo. Los agentes nunca mergean.
-- Borrar la rama después del merge.
+- **Squash merge**, solo con CI en verde (sin CI: `verify.sh` sin regresiones respecto de `main`) y revisión `APROBADO`. Borrar la rama después.
+- Política: **mergea el 👤 dueño**. Única excepción: el 🧠, cuando el dueño se lo pide explícitamente para ese PR (revisión con sub-agente). Si el pedido no lo dice, no se mergea.
+- Ningún agente commitea ni pushea a `main`.
 
 ## 6. Protección de `main`
 La configura el dueño en GitHub (pasos exactos en [T-011](docs/tasks/T-011-owner-branch-protection.md)): requerir PR, requerir checks de CI, rama actualizada, historia lineal, sin force push, borrar ramas al mergear, solo squash merge.
@@ -59,9 +61,13 @@ Al cerrar cada fase del [ROADMAP](docs/ROADMAP.md): tag semántico `v0.x.0` y re
 - Dependabot (`.github/dependabot.yml`, se agrega en T-012 cuando CI esté en verde): Maven, npm y GitHub Actions, semanal, agrupando minor/patch.
 - Versiones mayores: nunca en un PR de Dependabot directo; se convierten en tarea 🧠 con su red de tests.
 
-## 9. Antes de pedir revisión (checklist rápido)
+## 9. Configuración de ejemplo
+- Todo archivo de configuración con valores por entorno tiene su `.example` commiteado y el archivo real en `.gitignore` (`AGENTS.md` §6).
+- Todo cambio que agregue o renombre una variable actualiza, **en el mismo PR**, su `.example`, README/`docs/SETUP.md` y `docker-compose.yml` (si la usa).
+
+## 10. Antes de pedir revisión (checklist rápido)
 - [ ] `./scripts/verify.sh` sin regresiones respecto de `main`.
 - [ ] Tests del cambio en el mismo PR (bugfix: primero el test que falla). Ver [docs/TESTING.md](docs/TESTING.md).
-- [ ] Sin secretos, `.env` ni datos reales.
+- [ ] Sin secretos, `.env` ni datos reales; `.example` y docs al día si cambió una variable.
 - [ ] Tarea, tablero y `STATUS.md` actualizados.
 - [ ] Título del PR en Conventional Commit.
